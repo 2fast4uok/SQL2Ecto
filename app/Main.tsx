@@ -1,8 +1,5 @@
 import Link from '@/components/Link'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
 import serverstack from 'public/static/images/serverstack.png'
 import Image from 'next/image'
 
@@ -11,7 +8,6 @@ const MAX_DISPLAY = 50
 export default function Home({ posts }) {
   return (
     <>
-
       <div className="xl:max-w-6xl lg:max-w-4xl md:max-w-2xl  mx-auto px-4 md:px-0">
         {/*     <!-- Hero Section -->
            */}{" "}
@@ -39,81 +35,61 @@ export default function Home({ posts }) {
           </div>
         </div>
         <div className="mt-28 mb-10">
-            <h2
-              id="basic"
-              className="md:text-center md:text-5xl text-3xl text-blue-900"
-            >
-              Basic SQL
-            </h2>
-          </div>
-        <ul className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4">
+          <h2
+            id="basic"
+            className="md:text-center md:text-5xl text-3xl text-blue-900"
+          >
+            Basic SQL
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4 ">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, title, summary, lesson } = post
             return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
-                      </div>
-                      <div className="text-base font-medium leading-6">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </li>
+              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
+                <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
+                  {lesson}
+                </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden line-clamp-2"
+                >
+                  {title}
+                </h3>
+                <div className="prose group-hover:text-white md:text-lg text-base line-clamp-2">
+                  {summary}
+                </div>
+                <p
+                  className="text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
+                >
+                  Read now &rarr;
+                </p>
+              </Link>
+
             )
           })}
-        </ul>
-      </div>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
-          <Link
-            href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="All posts"
-          >
-            All Posts &rarr;
-          </Link>
+        </div >
+      </div >
+      <footer>
+        <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+          <p className="mt-8 text-center items-center text-base text-gray-400">
+            Made with{" "}
+            <span className="text-red-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline h-8 w-8"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </span>{" "}
+            by tālam.
+          </p>
         </div>
-      )}
-      {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )}
+      </footer>
     </>
   )
 }

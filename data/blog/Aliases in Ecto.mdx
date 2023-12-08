@@ -1,9 +1,10 @@
 ---
-title: Aliases
-date: '2023-12-07'
+title: Aliases in Ecto
+date: '1044-11-11'
+lesson: 'ECTO INTRODUCTION'
 tags: ['markdown', 'code', 'features']
 draft: false
-summary: Example of a markdown file with code blocks and syntax highlighting
+summary: In Ecto, aliases are used to set names for modules. You can reference the module by that name and access everything inside it.
 ---
 
 In Ecto, aliases are used to set names for modules. You can reference the module by that name and access everything inside it. Essentially, it is a variable used to refer to a module. Whenever you want to access that module, you can use that variable to access it. You can use these aliases in both modules and Ecto queries.
@@ -11,7 +12,8 @@ In Ecto, aliases are used to set names for modules. You can reference the module
 ##### In modules,
 
 
-![[Pasted image 20231114171110.png]]
+![img]()
+
  This module, `SqlEcto.Hr`, is created for project functionalities. It includes two aliases: `HR.Country` and `HR.Repo`.
 
 `alias HR.Country` -> Meaning, In the `SqlEcto.HR` module, whenever we want to do some functionalities with `HR.Country`, we can use `Country` instead of `HR.Country`. This `alias` will create an alias for the module with its last word. For `HR.Repo` the alias is `Repo`.  This practice helps developers use their time more efficiently, as they can use only the last word instead of typing the entire module name.
