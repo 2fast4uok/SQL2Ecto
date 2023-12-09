@@ -1,3 +1,10 @@
+---
+title: LIKE Operator
+lesson: 'LESSON 6'
+date: '1111-11-11'
+draft: false
+summary: The `like` operator is used to match string values in `where`. You can fetch records that contain specific string characters.
+---
 
 The `like` operator is used to match string values in `where`. You can fetch records that contain specific string characters.
 
@@ -11,13 +18,13 @@ select * from employees where first_name like 'A%';
 
 Result:
 
-![[Screenshot from 2023-11-03 14-00-22.png]]
+![img](/static/images/Screenshotfrom2023-11-0314-00-22.png)
 
 ##### `ilike`
 
 `like` is case-sensitive. `ilike` is case-insensitive. This Means If you put `like A%` it will only give those records whose `first_name` starts with **A** not the small letter **a**, to also get the records started with a, use `ilike`.
 
-![[Screenshot from 2023-11-03 14-42-44.png]]
+![img](/static/images/Screenshotfrom2023-11-0314-42-44.png)
 
 ``` SQL
 select * from employees where first_name ilike 'a%';
@@ -25,7 +32,7 @@ select * from employees where first_name ilike 'a%';
 
 Result:
 
-![[Screenshot from 2023-11-03 14-44-12.png]]
+![img](/static/images/Screenshotfrom2023-11-0314-44-12.png)
 
 
 # Ecto query for `like`

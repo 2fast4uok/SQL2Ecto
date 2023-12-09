@@ -1,3 +1,10 @@
+---
+title: MIN & MAX
+lesson: 'LESSON 3'
+date: '1111-11-11'
+draft: false
+summary: The `MAX` and `MIN` are used to get the maximum and minimum values of a column which value can be numerical, character string, or dates.
+---
 
 The `MAX` and `MIN` are used to get the maximum and minimum values of a column which value can be numerical, character string, or dates. For numerical values, the highest number is returned as the maximum, and the lowest number is returned as the minimum. When dealing with string characters, the closest value starting from 'A' is returned as the minimum, and the closest value starting from 'Z' is returned as the maximum.
 
@@ -13,7 +20,7 @@ select max(salary) from employees;
 
 Result:
 
-![[Pasted image 20231116150038.png]]
+![img](/static/images/Pastedimage20231116150038.png)
 
 The highest `salary` is 24000.
 
@@ -25,7 +32,7 @@ select max(first_name) from employees;
 
 Result:
 
-![[Pasted image 20231116150410.png]]
+![img](/static/images/Pastedimage20231116150410.png)
 
 As observed, `MAX` returns the value with the starting letter closest to Z, which is V.
 
@@ -37,7 +44,7 @@ select min(salary) from employees;
 
 Result:
 
-![[Pasted image 20231116150152.png]]
+![img](/static/images/Pastedimage20231116150152.png)
 
 So the lowest `salary` is 2500.
 
@@ -49,7 +56,7 @@ select min(first_name) from employees;
 
 Result:
 
-![[Pasted image 20231116150503.png]]
+![img](/static/images/Pastedimage20231116150503.png)
 
 As observed, `MIN` returns the value with the starting letter closest to A.
 

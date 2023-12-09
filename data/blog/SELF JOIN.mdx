@@ -1,10 +1,18 @@
+---
+title: SELF Join
+lesson: 'LESSON 15'
+date: '1111-11-11'
+draft: false
+summary: The `SELF JOIN` command, used to join the same table with it's own table based on the queries.
+---
+
 The `SELF JOIN` command, used to join the same table with it's own table based on the queries. 
 
 For Example:
 
 Let's use `locations` table for this query. Refer [[01. Introduction]] to know about this table and the database.
 
-![[Pasted image 20231108205230.png]]
+![img](/static/images/Pastedimage20231108205230.png)
 
 This is the `locations` table. You can see that lot of records have same `country_id` such as `US`, `UK`. So Let's do query to find what are all the `street_address` are from what `country_id`.
 
@@ -16,5 +24,5 @@ Here, i am fetching `street_address_1`, `street_address_2` from `locations_1`, `
 
 Result:
 
-![[Pasted image 20231108212727.png]]
+![img](/static/images/Pastedimage20231108212727.png)
 

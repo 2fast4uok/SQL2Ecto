@@ -1,3 +1,10 @@
+---
+title: LEFT JOIN
+lesson: 'LESSON 10'
+date: '1111-11-11'
+draft: false
+summary: The `left join` command returns all rows from the left table and only the matching rows from the right. 
+---
 
 The `left join` command returns all rows from the left table and only the matching rows from the right. 
 
@@ -5,10 +12,10 @@ For Example:
 
 Let's use the `countries` table and `regions` table for this example. Refer [[01. Introduction]] to know about this table and the database.
 
-![[Pasted image 20231107155511.png]]
+![img](/static/images/Pastedimage20231107155511.png)
 
 
-![[Pasted image 20231107155541.png]]
+![img](/static/images/Pastedimage20231107155541.png)
 
 We have the `countries` and `regions` table. Let's perform a `left join` on them.
 
@@ -21,7 +28,7 @@ The `left join` will return all rows from the `countries` table and only the row
 
 Result:
 
-![[Pasted image 20231107155706.png]]
+![img](/static/images/Pastedimage20231107155706.png)
 
 The `regions` table has 7 rows, and the `countries` table has 25 rows. The last 3 records in the `regions` table didn't match with any rows in the `countries` table. Since `LEFT JOIN` returns only matching values from the right-side table, these unmatched values in the `regions` table didn't appear in the result in the above example.
 

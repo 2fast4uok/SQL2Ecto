@@ -1,5 +1,13 @@
+---
+title: Comparison Operator
+lesson: 'LESSON 4'
+date: '1111-11-11'
+draft: false
+summary: In `SQL` and `Ecto`, comparison operators are used to compare values, allowing you to filter results based on specified conditions.
+---
 
 In `SQL` and `Ecto`, comparison operators are used to compare values, allowing you to filter results based on specified conditions.
+
 ##### Comparison operators
 
 In `SQL` and `Ecto`, comparison operators are the same. only equal to will vary. In SQL = is used , in `Ecto` == is used
@@ -27,9 +35,9 @@ In `Ecto`
 
 Example 1: 
 
-Let's select those records from [`employees`](01.%20Introduction) whose salary is **less than** 6000 using the less than(<) operator.
+Let's select those records from [`employees`](01.%20Introduction) whose salary is **less than** 6000 using the less than (&lt;) operator.
 
-![[Screenshot from 2023-11-03 11-45-03.png]]
+![img](/static/images/Screenshotfrom2023-11-0311-45-03.png)
 
 ``` SQL
 select * from employees where salary < 6000;
@@ -37,7 +45,7 @@ select * from employees where salary < 6000;
 
 Result:
 
-![[Pasted image 20231116104640.png]]
+![img](/static/images/Pastedimage20231116104640.png)
 
 Example 2:
 
@@ -55,7 +63,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-We are fetching `HR.Employee` whose salary is **less than** 6000 using less than (<) operator.
+We are fetching `HR.Employee` whose salary is **less than** 6000 using less than (&lt;) operator.
 
 ```Elixir
 HR.Location 

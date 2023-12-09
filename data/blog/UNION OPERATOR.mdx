@@ -1,3 +1,11 @@
+---
+title: SUM
+lesson: 'LESSON 14'
+date: '1111-11-11'
+draft: false
+summary: The `union` command is used to do multiple queries at once. By using `union`,  Both queries will return a single table.
+---
+
 The `union` command is used to do multiple queries at once. By using `union`,  Both queries will return a single table.
 
 ##### `union`
@@ -6,10 +14,10 @@ For Example:
 
 Let's use the `countries` table and `regions` table for this example. Refer [[01. Introduction]] to know about this table and the database.
 
-![[Pasted image 20231108115523.png]]
+![img](/static/images/Pastedimage20231108115523.png)
 
 
-![[Pasted image 20231108115607.png]]
+![img](/static/images/Pastedimage20231108115607.png)
 
 
 ``` SQL
@@ -25,7 +33,7 @@ In `union`,
 
 Result:
 
-![[Pasted image 20231108115708.png]]
+![img](/static/images/Pastedimage20231108115708.png)
 
 Here, you can see that `region_id` from both table has been returned  without duplicates.
 
@@ -43,7 +51,7 @@ select region_id from regions union all select region_id from countries;
 
 Result:
 
-![[Pasted image 20231108120942.png]]
+![img](/static/images/Pastedimage20231108120942.png)
 
 
 # Ecto query for `union`

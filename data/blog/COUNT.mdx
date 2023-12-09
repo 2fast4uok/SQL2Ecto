@@ -1,9 +1,16 @@
+---
+title: COUNT
+lesson: 'LESSON 1'
+date: '1111-11-11'
+draft: false
+summary: The `COUNT` command is used to count the total number of non-null values for a particular  column. You can also count the entire table.
+---
 
 The `COUNT` command is used to count the total number of non-null values for a particular  column. You can also count the entire table.
 
 For Example:
 
-![[Pasted image 20231116133453.png]]
+![img](/static/images/Pastedimage20231116133453.png)
 
 The above is the [`employees`](01.%20Introduction)  table. The following syntax is used to get the total number of rows in this table.
 
@@ -15,7 +22,7 @@ select count(*) from employees;
 
 Result:
 
-![[Pasted image 20231116133523.png]]
+![img](/static/images/Pastedimage20231116133523.png)
 
 Now, let's count the non-null `phone_number` rows.
 
@@ -25,7 +32,7 @@ select count(phone_number) from employees;
 
 Result:
 
-![[Pasted image 20231116133548.png]]
+![img](/static/images/Pastedimage20231116133548.png)
 
 You can see that when we counted the entire table using `*` the result was 31, but when I counted only `phone_number` rows, the result was 25.  It's because some records have a null value in the `phone_number` column. 
 
@@ -49,7 +56,7 @@ Here, `c` is the reference variable that refers to `HR.Employee`. Refer [[02. Al
 
 Result:
 
-![[Pasted image 20231116133750.png]]
+![img](/static/images/Pastedimage20231116133750.png)
 
 The total number of records for `HR.Employees` is 31 as you can see in the above example.
 
@@ -78,7 +85,7 @@ HR.Employee
 
 Result:
 
-![[Pasted image 20231116134048.png]]
+![img](/static/images/Pastedimage20231116134048.png)
 
 The total number of records that `phone_number` has a non-null value is 19.
 

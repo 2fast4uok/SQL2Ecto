@@ -19,7 +19,7 @@ export default function Home({ posts }) {
             <h2 className="text-2xl xl:pr-7">
               {siteMetadata.description}
             </h2>
-            <Link href="intro.html">
+            <Link href="/">
               <button className="px-8 py-3 mt-10 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 dark:text-white font-semibold rounded">
                 Get Started
               </button>

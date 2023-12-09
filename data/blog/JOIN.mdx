@@ -1,3 +1,10 @@
+---
+title: JOIN
+lesson: 'LESSON 8'
+date: '1111-11-11'
+draft: false
+summary: The `join/inner join` command is used to join multiple tables based on a particular column. Tables can be joined using the same column that the tables share. There are four types of `join`.
+---
 
 The `join/inner join` command is used to join multiple tables based on a particular column. Tables can be joined using the same column that the tables share. There are four types of `join`.
 
@@ -14,11 +21,11 @@ We are using the `employees` table and `jobs` table for this example.
 
 #####  `employees` table
 
-![[Pasted image 20231107104248.png]]
+![img](/static/images/Pastedimage20231107104248.png)
 
 ##### `jobs` table
 
-![[Pasted image 20231107104406.png]]
+![img](/static/images/Pastedimage20231107104406.png)
 
 The `employees` and the `jobs` tables have a common column called `job_id`. We can join these two tables and create one big table using this `job_id` column.  
 
@@ -39,7 +46,7 @@ Query Explanation:
 
 Result:
 
-![[Pasted image 20231116224817.png]]
+![img](/static/images/Pastedimage20231116224817.png)
 
 In the above table, you can see that both `employees` and `jobs` are joined together, with all the columns appearing. All columns are here because we select `*`, which means every column from both tables.
 
@@ -53,7 +60,7 @@ In the above example, we are selecting only `first_name` from `employees`, `last
 
 Result:
 
-![[Pasted image 20231116224852.png]]
+![img](/static/images/Pastedimage20231116224852.png)
 
 
 # Ecto query for `join` 
@@ -75,11 +82,11 @@ Example:
 
 We are using the `countries` and `regions`table for this query. Refer [[01. Introduction]] to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
 
-![[Pasted image 20231107155511.png]]
+![img](/static/images/Pastedimage20231107155511.png)
 
 PSQL example `regions` table
 
-![[Pasted image 20231107155541.png]]
+![img](/static/images/Pastedimage20231107155541.png)
 
 Now let's perform an `inner join` for these two tables in `Ecto`.
 

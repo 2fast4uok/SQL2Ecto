@@ -1,3 +1,10 @@
+---
+title: DISTINCT
+lesson: 'LESSON 7'
+date: '1111-11-11'
+draft: false
+summary: The `distinct` command is used to get unique values from any columns in a table.
+---
 
 The `distinct` command is used to get unique values from any columns in a table. Using the `distinct` keyword, you can see all the distinct values present in a particular table. 
 
@@ -5,7 +12,7 @@ For Example:
 
 Let's use the `locations` table for this query. To learn more about this table and the database, refer to [[01. Introduction]].
 
-![[Pasted image 20231108164532.png]]
+![img](/static/images/Pastedimage20231108164532.png)
 
  you can find what are all the `country_id` values present in the `locations` table. When you use the `distinct` keyword for any column, the duplicates in that column won't be returned.  Although the `locations` table has 3 `country_id` entries as `US`, using `distinct` will only return one. Even if there are 10 `street_address` entries with the same `country_id`, `distinct` will only return one.
 
@@ -17,7 +24,7 @@ The above query will return all the unique `country_id` values in the `locations
 
 Result:
 
-![[Pasted image 20231116223140.png]]
+![img](/static/images/Pastedimage20231116223140.png)
 
 We have 4 unique `country_id` values in the `locations` table.
 
@@ -43,7 +50,7 @@ The above query will return all the unique values from the `country_id` field in
 
 Result:
 
-![[Pasted image 20231116223313.png]]
+![img](/static/images/Pastedimage20231116223313.png)
 
 So we have a total of 4 unique `country_id` values present in `HR.Location`.
 

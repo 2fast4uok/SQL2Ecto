@@ -1,3 +1,10 @@
+---
+title: FULL OUTER JOIN
+lesson: 'LESSON 13'
+date: '1111-11-11'
+draft: false
+summary: A `full outer join` will return unmatched and matched values from both tables.
+---
 
 A `full outer join` will return unmatched and matched values from both tables. 
 
@@ -5,10 +12,10 @@ For Example:
 
 Let's use the `job_history` table and `regions` table. Refer [[01. Introduction]] to know about this table and the database.
 
-![[Pasted image 20231107162852.png]]
+![img](/static/images/Pastedimage20231107162852.png)
  
 
-![[Pasted image 20231107162952.png]]
+![img](/static/images/Pastedimage20231107162952.png)
 
 In `job_history`, one records has a `region_id`, and one record doesn't have a `region_id`. So, one record doesn't have any matches with the `regions` table.
 
@@ -18,7 +25,7 @@ select * from regions full outer join job_history on regions.region_id = job_his
 
 Result:
 
-![[Pasted image 20231107163139.png]]
+![img](/static/images/Pastedimage20231107163139.png)
 
 You can see that all columns are returned.
 
