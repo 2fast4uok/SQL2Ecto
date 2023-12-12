@@ -68,7 +68,7 @@ HR.Country
 ```
 
 - `join(:left, [p], r in HR.Region, on: p.region_id == r.region_id)` -> Left join, joining rows whose `region_id` is the same. Here `p` and `r` are reference variables. Refer to [[02. Aliases in Ecto]] to understand reference variables.
-- `where([p], p.region_id == 2)` -> Only include rows whose `region_id` is 2. You can also use other comparison operators here, such as !=, <, >.
+- `where([p], p.region_id == 2)` -> Only include rows whose `region_id` is 2. You can also use other comparison operators here, such as !=, &lt;, &gt;.
 
 Result:
 

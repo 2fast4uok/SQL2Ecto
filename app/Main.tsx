@@ -67,6 +67,39 @@ export default function Home({ posts }) {
             )
           })}
         </div >
+        <div className="mt-28 mb-10">
+          <h2
+            id="basic"
+            className="md:text-center md:text-5xl text-3xl text-blue-900"
+          >
+            Intermediate SQL
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4 ">
+          {!posts.length && 'No posts found.'}
+          {posts.slice(0, MAX_DISPLAY).map((post) => {
+            const { slug, title, summary, lesson } = post
+            return (
+              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
+                <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
+                  {lesson}
+                </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden line-clamp-2"
+                >
+                  {title}
+                </h3>
+                <div className="prose group-hover:text-white md:text-lg text-base line-clamp-2">
+                  {summary}
+                </div>
+                <p
+                  className="text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
+                >
+                  Read now &rarr;
+                </p>
+              </Link>
+
+            )
+          })}
+        </div >
       </div >
       <footer>
         <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
