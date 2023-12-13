@@ -87,7 +87,7 @@ export default function Home({ posts }) {
                 >
                   {title}
                 </h3>
-                <div className="prose group-hover:text-white md:text-lg text-base line-clamp-2">
+                <div className="group-hover:text-white md:text-lg text-base line-clamp-2">
                   {summary}
                 </div>
                 <p
