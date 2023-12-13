@@ -45,9 +45,9 @@ export default function Home({ posts }) {
         <div className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4 ">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, title, summary, lesson } = post
+            const { slug, title, summary, lesson, } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
                 </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden font-medium line-clamp-2"
