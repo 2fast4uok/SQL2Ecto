@@ -6,14 +6,17 @@ import Image from 'next/image'
 const MAX_DISPLAY = 50
 
 export default function Home({ posts }) {
+  const basic_posts = posts.filter((post) => post.level == 'Basic')
+  const intermediate_posts = posts.filter((post) => post.level == 'Intermediate')
   return (
     <>
-    <div className='bg-sky-100'>
+    <main className='bg-sky-100'>
+      <div className='bg-sky-100 dark:bg-gray-950'>
         {/*     <!-- Hero Section -->
            */}{" "}
         <div className="grid md:grid-cols-2 mt-28">
           <div className="space-y-8">
-            <h1 className="md:text-7xl text-5xl font-semibold text-blue-900">
+            <h1 className="md:text-7xl text-5xl font-semibold text-blue-900 dark:text-blue-400">
               Welcome to the SQL Tutorial
             </h1>
             <h2 className="text-2xl xl:pr-7">
@@ -37,28 +40,29 @@ export default function Home({ posts }) {
         <div className="mt-28 mb-10">
           <h2
             id="basic"
-            className="md:text-center md:text-5xl text-3xl font-semibold text-blue-900"
+            className="md:text-center md:text-5xl text-3xl font-semibold text-blue-900 dark:text-blue-400"
           >
             Basic SQL
           </h2>
         </div>
         <div className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4 ">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
+          {!basic_posts.length && 'No basic posts found.'}
+          {basic_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson, } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
-                </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden font-medium line-clamp-2"
+                </p>
+                <h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden font-medium line-clamp-2"
                 >
                   {title}
                 </h3>
-                <div className="group-hover:text-white md:text-lg text-base line-clamp-2">
+                <div className="text-black group-hover:text-white md:text-lg text-base line-clamp-2">
                   {summary}
                 </div>
                 <p
-                  className="text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
+                  className="text-black text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
                 >
                   Read now &rarr;
                 </p>
@@ -70,14 +74,14 @@ export default function Home({ posts }) {
         <div className="mt-28 mb-10">
           <h2
             id="basic"
-            className="md:text-center md:text-5xl font-semibold text-3xl text-blue-900"
+            className="md:text-center md:text-5xl font-semibold text-3xl text-blue-900 dark:text-blue-400"
           >
             Intermediate SQL
           </h2>
         </div>
         <div className="grid md:grid-cols-3 md:gap-x-5 md:gap-y-10 gap-y-4 ">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
+          {!intermediate_posts.length && 'No intermediate posts found.'}
+          {intermediate_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson } = post
             return (
               <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
@@ -96,11 +100,11 @@ export default function Home({ posts }) {
                   Read now &rarr;
                 </p>
               </Link>
-
             )
           })}
         </div >
-        </div>
+      </div>
+      </main>
     </>
   )
 }

@@ -37,7 +37,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             </div>
             </div>
             
-              <div className="text-center text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700"><Link href="/">Back to Homepage
+              <div className="text-center dark:text-white text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700"><Link href="/">Back to Homepage
               </Link></div>
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-xl">
