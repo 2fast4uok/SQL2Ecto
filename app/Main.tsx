@@ -10,8 +10,7 @@ export default function Home({ posts }) {
   const intermediate_posts = posts.filter((post) => post.level == 'Intermediate')
   return (
     <>
-    <main className='bg-sky-100'>
-      <div className='bg-sky-100 dark:bg-gray-950'>
+      <div className='dark:bg-gray-950'>
         {/*     <!-- Hero Section -->
            */}{" "}
         <div className="grid md:grid-cols-2 mt-28">
@@ -50,7 +49,7 @@ export default function Home({ posts }) {
           {basic_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson, } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-100 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
                 </p>
@@ -58,11 +57,11 @@ export default function Home({ posts }) {
                 >
                   {title}
                 </h3>
-                <div className="text-black group-hover:text-white md:text-lg text-base line-clamp-2">
+                <div className="group-hover:text-white md:text-lg text-base line-clamp-2">
                   {summary}
                 </div>
                 <p
-                  className="text-black text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
+                  className="text-md md:text-lg font-semibold pt-2 md:pt-4 group-hover:text-white"
                 >
                   Read now &rarr;
                 </p>
@@ -84,7 +83,7 @@ export default function Home({ posts }) {
           {intermediate_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="bg-white rounded-xl p-4 md:p-8 shadow group-hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-100 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
                 </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden font-medium line-clamp-2"
@@ -104,7 +103,6 @@ export default function Home({ posts }) {
           })}
         </div >
       </div>
-      </main>
     </>
   )
 }
