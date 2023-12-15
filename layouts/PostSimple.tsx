@@ -35,37 +35,37 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
             </div>
-            </div>
-            
-              <div className="text-center dark:text-white text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700"><Link href="/">Back to Homepage
-              </Link></div>
-            <footer>
-              <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-xl">
-                {prev && prev.path && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/${prev.path}`}
-                      className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                      aria-label={`Previous post: ${prev.title}`}
-                    >
-                      &larr; {prev.title}
-                    </Link>
-                  </div>
-                )}
-                {next && next.path && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/${next.path}`}
-                      className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                      aria-label={`Next post: ${next.title}`}
-                    >
-                      {next.title} &rarr;
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </footer>
           </div>
+
+          <div className="text-center dark:text-white text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700"><Link href="/">Back to Homepage
+          </Link></div>
+          <footer>
+            <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-xl">
+              {prev && prev.path && (
+                <div className="pt-4 xl:pt-8">
+                  <Link
+                    href={`/${prev.path}`}
+                    className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+                    aria-label={`Previous post: ${prev.title}`}
+                  >
+                    &larr; {prev.title}
+                  </Link>
+                </div>
+              )}
+              {next && next.path && (
+                <div className="pt-4 xl:pt-8">
+                  <Link
+                    href={`/${next.path}`}
+                    className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+                    aria-label={`Next post: ${next.title}`}
+                  >
+                    {next.title} &rarr;
+                  </Link>
+                </div>
+              )}
+            </div>
+          </footer>
+        </div>
       </article>
     </SectionContainer>
   )

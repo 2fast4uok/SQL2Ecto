@@ -18,10 +18,10 @@ export default function Home({ posts }) {
             <h1 className="md:text-7xl text-5xl font-semibold text-blue-900 dark:text-blue-400">
               Welcome to the SQL Tutorial
             </h1>
-            <h2 className="text-2xl xl:pr-7">
+            <h2 className="text-2xl xl:pr-7 dark:text-white">
               {siteMetadata.description}
             </h2>
-            <Link href="/">
+            <Link href="">
               <button className="px-8 py-3 mt-10 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white dark:text-white font-semibold rounded">
                 Get Started
               </button>
@@ -38,7 +38,7 @@ export default function Home({ posts }) {
         </div>
         <div className="mt-28 mb-10">
           <h2
-            id="basic"
+            id="Basic"
             className="md:text-center md:text-5xl text-3xl font-semibold text-blue-900 dark:text-blue-400"
           >
             Basic SQL
@@ -49,7 +49,7 @@ export default function Home({ posts }) {
           {basic_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson, } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-100 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-50 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
                 </p>
@@ -72,7 +72,7 @@ export default function Home({ posts }) {
         </div >
         <div className="mt-28 mb-10">
           <h2
-            id="basic"
+            id="Intermediate"
             className="md:text-center md:text-5xl font-semibold text-3xl text-blue-900 dark:text-blue-400"
           >
             Intermediate SQL
@@ -83,7 +83,7 @@ export default function Home({ posts }) {
           {intermediate_posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, title, summary, lesson } = post
             return (
-              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-100 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
+              <Link key={slug} href={`/blog/${slug}`} className="group overflow-hidden hover:scale-105 duration-300 bg-blue-50 rounded-xl p-4 md:p-8 shadow hover:bg-blue-800 transition-all h-fit">
                 <p className="text-blue-950 uppercase text-[10px] md:text-xs font-medium group-hover:text-white pb-4">
                   {lesson}
                 </p><h3 className="text-blue-900 text-xl md:text-3xl h-10 md:h-24 group-hover:text-white text-clip overflow-hidden font-medium line-clamp-2"
