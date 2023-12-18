@@ -1,92 +1,20 @@
-![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
+![SQL2Ecto Banner](public/static/images/sql2ectobanner.png)
 
 # Tailwind Nextjs Starter Blog
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
-
-This is a [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) project that shows EdTech content to learn SQL  Version 2 is based on Next App directory with [React Server Component](https://nextjs.org/docs/getting-started/react-essentials#server-components) and uses [Contentlayer](https://www.contentlayer.dev/) to manage markdown content.
-
-Probably the most feature-rich Next.js markdown blogging template out there. Easily configurable and customizable. Perfect as a replacement to existing Jekyll and Hugo individual blogs.
-
-Check out the documentation below to get started.
-
-Facing issues? Check the [FAQ page](https://github.com/timlrx/tailwind-nextjs-starter-blog/wiki) and do a search on past issues. Feel free to open a new issue if none has been posted previously.
-
-Feature request? Check the past discussions to see if it has been brought up previously. Otherwise, feel free to start a new discussion thread. All ideas are welcomed!
-
-## Variations
-
-**Note**: These are community contributed forks using different frameworks or with significant changes to the codebase - not officially supported.
-
-Astro alternative - [Tailwind Astro Template](https://github.com/wanoo21/tailwind-astro-starting-blog).
-
-Remix-run alternative - [Tailwind Remix-run Starter Blog Template](https://github.com/SangeetAgarwal/tailwind-remix-run-mdxjs-typescript-starter-blog).
-
-Internationalization support - [Template with i18n](https://tailwind-nextjs-starter-blog-i18n.vercel.app/) and [source code](https://github.com/PxlSyl/tailwind-nextjs-starter-blog-i18n/tree/main).
+This is a [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) project that shows EdTech content to learn SQL and Ecto. Ecto is an official Elixir project providing a database wrapper and integrated query language.
 
 ## Motivation
 
-I wanted to port my existing blog to Nextjs and Tailwind CSS but there was no easy out of the box template to use so I decided to use [timlrx's] (https://github.com/timlrx), where he adapted the design from [Tailwindlabs blog](https://github.com/tailwindlabs/blog.tailwindcss.com).
+I wanted to port my existing HTML blog to Nextjs and Tailwind CSS but there was no easy out of the box template to use so I decided to use ![timlrx's](https://github.com/timlrx), where he adapted the design from [Tailwindlabs blog](https://github.com/tailwindlabs/blog.tailwindcss.com).
 
-I wanted the blog to incorporate [Sangeetha's] (https://github.com/sangeethailango/SQL-Ecto-writings) SQL to Ecto knowledge as she has experience with the language known as Elixer.
-
-## Features
-
-- Next.js with Typescript
-- [Contentlayer](https://www.contentlayer.dev/) to manage content logic
-- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
-- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/230805_BiDcBQ_4H7)
-- Lightweight, 85kB first load JS
-- Mobile-friendly view
-- Light and dark theme
-- Font optimization with [next/font](https://nextjs.org/docs/app/api-reference/components/font)
-- Integration with [pliny](https://github.com/timlrx/pliny) that provides:
-  - Multiple analytics options including [Umami](https://umami.is/), [Plausible](https://plausible.io/), [Simple Analytics](https://simpleanalytics.com/), Posthog and Google Analytics
-  - Comments via [Giscus](https://github.com/laymonage/giscus), [Utterances](https://github.com/utterance/utterances) or Disqus
-  - Newsletter API and component with support for Mailchimp, Buttondown, Convertkit, Klaviyo, Revue, and Emailoctopus
-  - Command palette search with [Kbar](https://github.com/timc1/kbar) or Algolia
-- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
-- Math display supported via [KaTeX](https://katex.org/)
-- Citation and bibliography support via [rehype-citation](https://github.com/timlrx/rehype-citation)
-- Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
-- Support for tags - each unique tag will be its own page
-- Support for multiple authors
-- 3 different blog layouts
-- 2 different blog listing layouts
-- Support for nested routing of blog posts
-- Projects page
-- Preconfigured security headers
-- SEO friendly with RSS feed, sitemaps and more!
-
-## Sample posts
-
-- [A markdown guide](https://tailwind-nextjs-starter-blog.vercel.app/blog/github-markdown-guide)
-- [Learn more about images in Next.js](https://tailwind-nextjs-starter-blog.vercel.app/blog/guide-to-using-images-in-nextjs)
-- [A tour of math typesetting](https://tailwind-nextjs-starter-blog.vercel.app/blog/deriving-ols-estimator)
-- [Simple MDX image grid](https://tailwind-nextjs-starter-blog.vercel.app/blog/pictures-of-canada)
-- [Example of long prose](https://tailwind-nextjs-starter-blog.vercel.app/blog/the-time-machine)
-- [Example of Nested Route Post](https://tailwind-nextjs-starter-blog.vercel.app/blog/nested-route/introducing-multi-part-posts-with-nested-routing)
-
-## Quick Start Guide
-
-1. Clone the repo
-
-```bash
-npx degit 'timlrx/tailwind-nextjs-starter-blog'
-```
-
-2. Personalize `siteMetadata.js` (site related information)
-3. Modify the content security policy in `next.config.js` if you want to use
-   other analytics provider or a commenting solution other than giscus.
-4. Personalize `authors/default.md` (main author)
-5. Modify `projectsData.ts`
-6. Modify `headerNavLinks.ts` to customize navigation links
-7. Add blog posts
-8. Deploy on Vercel
+I wanted the blog to incorporate [Sangeethailango] (https://github.com/sangeethailango/SQL-Ecto-writings)'s SQL to Ecto knowledge as she has experience with Elixir.
 
 ## Installation
 
+```bash
+sudo npm install --global yarn
+```
 ```bash
 yarn
 ```
@@ -99,11 +27,10 @@ First, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Edit the layout in `app` or content in `data`. With live reloading, the pages auto-updates as you edit them.
+Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Extend / Customize
+## FYI for Customization
 
 `data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
 
@@ -140,42 +67,6 @@ Edit the layout in `app` or content in `data`. With live reloading, the pages au
 
 Content is modelled using [Contentlayer](https://www.contentlayer.dev/), which allows you to define your own content schema and use it to generate typed content objects. See [Contentlayer documentation](https://www.contentlayer.dev/docs/getting-started) for more information.
 
-### Frontmatter
-
-Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
-
-Please refer to `contentlayer.config.ts` for an up to date list of supported fields. The following fields are supported:
-
-```
-title (required)
-date (required)
-tags (optional)
-lastmod (optional)
-draft (optional)
-summary (optional)
-images (optional)
-authors (optional list which should correspond to the file names in `data/authors`. Uses `default` if none is specified)
-layout (optional list which should correspond to the file names in `data/layouts`)
-canonicalUrl (optional, canonical url for the post for SEO)
-```
-
-Here's an example of a post's frontmatter:
-
-```
----
-title: 'Introducing Tailwind Nexjs Starter Blog'
-date: '2021-01-12'
-lastmod: '2021-01-18'
-tags: ['next-js', 'tailwind', 'guide']
-draft: false
-summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
-authors: ['default', 'sparrowhawk']
-layout: PostLayout
-canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-tailwind-nextjs-starter-blog
----
-```
-
 ## Deploy
 
 **Vercel**  
@@ -205,11 +96,3 @@ See [Next.js on Netlify](https://docs.netlify.com/integrations/frameworks/next-j
 - [How can I add a custom MDX component?](/faq/custom-mdx-component.md)
 - [How can I customize the `kbar` search?](/faq/customize-kbar-search.md)
 - [How do I deploy on Github pages?](/faq/github-pages-deployment.md)
-
-## Support
-
-Using the template? Support this effort by giving a star on GitHub, sharing your own blog and giving a shoutout on Twitter or becoming a project [sponsor](https://github.com/sponsors/timlrx).
-
-## Licence
-
-[MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/LICENSE) © [Timothy Lin](https://www.timlrx.com)

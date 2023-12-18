@@ -2,12 +2,15 @@ import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import serverstack from 'public/static/images/serverstack.png'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 
 const MAX_DISPLAY = 50
 
 export default function Home({ posts }) {
   const basic_posts = posts.filter((post) => post.level == 'Basic')
   const intermediate_posts = posts.filter((post) => post.level == 'Intermediate')
+  const IntroductionPost = posts.find((post) => post.title === 'Introduction');
+  const IntroductionUrl = IntroductionPost ? `/blog/${IntroductionPost.slug}` : '/'; 
   return (
     <>
       <div className='dark:bg-gray-950'>
@@ -21,7 +24,7 @@ export default function Home({ posts }) {
             <h2 className="text-2xl xl:pr-7 dark:text-white">
               {siteMetadata.description}
             </h2>
-            <Link href="">
+            <Link href={IntroductionUrl}>
               <button className="px-8 py-3 mt-10 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white dark:text-white font-semibold rounded">
                 Get Started
               </button>
@@ -30,8 +33,8 @@ export default function Home({ posts }) {
           <div className="md:grid hidden justify-items-end">
             <Image
               src={serverstack}
-              width={270}
-              height={270}
+              width={300}
+              height={300}
               alt="Server Stack Image"
             />
           </div>
