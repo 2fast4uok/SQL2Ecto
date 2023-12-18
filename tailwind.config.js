@@ -32,11 +32,11 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.blue.600'),
               '&:hover': {
                 color: `${theme('colors.primary.600')}`,
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.blue.400') },
             },
             'h1,h2': {
               fontWeight: '700',
@@ -46,18 +46,39 @@ module.exports = {
               fontWeight: '600',
             },
             code: {
-              color: theme('colors.indigo.500'),
+              color: theme('colors.indigo.700'),
+              background: theme('backgroundColor.gray.200'),
+              paddingLeft: '5px',
+              paddingRight: '5px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '0.25rem',
+            },
+            'code::before': {
+              content: 'none',
+            },
+            'code::after': {
+              content: 'none',
             },
           },
         },
         invert: {
           css: {
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.blue.500'),
               '&:hover': {
                 color: `${theme('colors.primary.400')}`,
               },
-              code: { color: theme('colors.primary.400') },
+              code: {color: theme ('colors.blue.300') },
+            },
+            code: {
+              color: theme('colors.indigo.400'),
+              background: theme('backgroundColor.gray.800'),
+              paddingLeft: '5px',
+              paddingRight: '5px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '0.25rem',
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),

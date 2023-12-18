@@ -10,7 +10,8 @@ export default function Home({ posts }) {
   const basic_posts = posts.filter((post) => post.level == 'Basic')
   const intermediate_posts = posts.filter((post) => post.level == 'Intermediate')
   const IntroductionPost = posts.find((post) => post.title === 'Introduction');
-  const IntroductionUrl = IntroductionPost ? `/blog/${IntroductionPost.slug}` : '/'; 
+  const IntroductionUrl = IntroductionPost ? `/blog/${IntroductionPost.slug}` : '/'; // Adjust the path if needed
+
   return (
     <>
       <div className='dark:bg-gray-950'>
