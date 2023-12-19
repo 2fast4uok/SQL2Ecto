@@ -10,11 +10,9 @@ export default function Home({ posts }) {
   const basic_posts = posts.filter((post) => post.level == 'Basic')
   const intermediate_posts = posts.filter((post) => post.level == 'Intermediate')
   const IntroductionPost = posts.find((post) => post.title === 'Introduction');
-  const IntroductionUrl = IntroductionPost ? `/blog/${IntroductionPost.slug}` : '/'; // Adjust the path if needed
-
+  const IntroductionUrl = IntroductionPost ? `/blog/${IntroductionPost.slug}` : '/';
   return (
     <>
-      <div className='dark:bg-gray-950'>
         {/*     <!-- Hero Section -->
            */}{" "}
         <div className="grid md:grid-cols-2 mt-28">
@@ -105,8 +103,7 @@ export default function Home({ posts }) {
               </Link>
             )
           })}
-        </div >
-      </div>
+        </div>
     </>
   )
 }

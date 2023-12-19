@@ -39,19 +39,10 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
 
           <div className="text-center dark:text-white text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700"><Link href="/">Back to Homepage
           </Link></div>
+
+          {/* I have switched the postitions of the prev/next paths as the navigation order has to be as it is on Main.tsx */}
           <footer>
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-xl">
-              {prev && prev.path && (
-                <div className="pt-4 xl:pt-8">
-                  <Link
-                    href={`/${prev.path}`}
-                    className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                    aria-label={`Previous post: ${prev.title}`}
-                  >
-                    &larr; {prev.title}
-                  </Link>
-                </div>
-              )}
               {next && next.path && (
                 <div className="pt-4 xl:pt-8">
                   <Link
@@ -59,7 +50,18 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                     className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
                     aria-label={`Next post: ${next.title}`}
                   >
-                    {next.title} &rarr;
+                    &larr; {next.title} 
+                  </Link>
+                </div>
+              )}
+              {prev && prev.path && (
+                <div className="pt-4 xl:pt-8">
+                  <Link
+                    href={`/${prev.path}`}
+                    className="text-blue-900 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+                    aria-label={`Previous post: ${prev.title}`}
+                  >
+                    {prev.title} &rarr;
                   </Link>
                 </div>
               )}

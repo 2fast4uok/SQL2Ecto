@@ -10,7 +10,7 @@ level: Basic
 
 The `in` command is employed to retrieve records by checking for multiple values in the `where` clause. In the `where` clause, **Comparison operators** such as =, >= allow you to compare with only one value, but the  `in` command enables checking for multiple values.
 
-For example:
+**For Example:**
 
 ``` SQL
 select * from employees where job_id in (9, 5, 6);
@@ -18,15 +18,15 @@ select * from employees where job_id in (9, 5, 6);
 
 The above code will retrieve [`employees`](01.%20Introduction)  records whose `job_id` is either 9, 5, or 6.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231114161057.png)
+<img src="/static/images/Pastedimage20231114161057.png" width="1300" />
 
 In the above table, you can observe that all records have a `job_id` of either 9, 5, or 6. The `in` command allows us to check for multiple values, and it can also be used with strings.
 
 # Ecto query for `in`
 
-#### [in/2]( [in/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#in/2))
+#### [in/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#in/2)
 
 ##### Expression
 
@@ -44,7 +44,8 @@ The above code will fetch `HR.Employee` records whose `job_id` is 1, 2, or 3.
 `where([c], c.job_id in [1, 2, 3])` -> Here `[c]` is the [reference variable](02.%20Aliases%20in%20Ecto) that is used to refer to `HR.Employee`.  To learn more about the reference variable, refer to [reference variable](https://chat.openai.com/c/02.%20Aliases%20in%20Ecto)
 
 
-Result:
+**Result:**
+
 ```Elixir
 IEx(29)> HR.Employee |> where([c], c.job_id in [1, 2, 3]) |> HR.Repo.all()
 
@@ -93,7 +94,7 @@ IEx(29)> HR.Employee |> where([c], c.job_id in [1, 2, 3]) |> HR.Repo.all()
 
 In the above example, both records contain a `job_id` of either 1, 2, or 3.
 
-##### Keywords
+#### Keywords
 
 ``` Elixir
 HR.Repo.all(from c in HR.Employee, where: c.job_id in [1,2,3])  

@@ -10,7 +10,7 @@ level: Intermediate
 
 The `MAX` and `MIN` are used to get the maximum and minimum values of a column which value can be numerical, character string, or dates. For numerical values, the highest number is returned as the maximum, and the lowest number is returned as the minimum. When dealing with string characters, the closest value starting from 'A' is returned as the minimum, and the closest value starting from 'Z' is returned as the maximum.
 
-For Example:
+**For Example:**
 
 Let's find out the highest and lowest of the `salary` column from the table [`employees`](01.%20Introduction).
 
@@ -20,9 +20,9 @@ Let's find out the highest and lowest of the `salary` column from the table [`em
 select max(salary) from employees;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116150038.png)
+<img src="/static/images/Pastedimage20231116150038.png" width="600" />
 
 The highest `salary` is 24000.
 
@@ -32,9 +32,9 @@ To find the highest value in string characters:
 select max(first_name) from employees;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116150410.png)
+<img src="/static/images/Pastedimage20231116150410.png" width="600" />
 
 As observed, `MAX` returns the value with the starting letter closest to Z, which is V.
 
@@ -44,9 +44,9 @@ As observed, `MAX` returns the value with the starting letter closest to Z, whic
 select min(salary) from employees;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116150152.png)
+<img src="/static/images/Pastedimage20231116150152.png" width="600" />
 
 So the lowest `salary` is 2500.
 
@@ -56,9 +56,9 @@ To find the lowest value in string characters:
 select min(first_name) from employees;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116150503.png)
+<img src="/static/images/Pastedimage20231116150503.png" width="600" />
 
 As observed, `MIN` returns the value with the starting letter closest to A.
 
@@ -70,7 +70,7 @@ The `max/1` function is used to find the maximum value of a specific field in a 
 
 ##### Expressions
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Employee 
@@ -80,7 +80,7 @@ HR.Employee
 
 Here, `c` is the reference variable referring to `HR.Employee`. Refer [[02. Aliases in Ecto]] to understand aliases/reference variables. 
 
-Result:
+**Result:**
 
 ```Elixir
 iex(60)> HR.Employee |> select([c], max(c.salary)) |> HR.Repo.all() 
@@ -89,7 +89,7 @@ iex(60)> HR.Employee |> select([c], max(c.salary)) |> HR.Repo.all()
 
 The maximum value in the `salary` field is 24000.
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, select: max(c.salary))   
@@ -101,7 +101,7 @@ The `min/1` function is used to find the lowest value of a specific field in a s
 
 ##### Expressions
 
-For Example:
+**For Example:**
 
 ```Elixir
 HR.Employee 
@@ -109,7 +109,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-Result:
+**Result:**
 
 ```Elixir
 iex(62)> HR.Employee |> select([c], min(c.salary)) |> HR.Repo.all()
@@ -118,7 +118,7 @@ iex(62)> HR.Employee |> select([c], min(c.salary)) |> HR.Repo.all()
 
 The minimum value in the `salary` field is 2500.
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, select: min(c.salary))   

@@ -10,9 +10,9 @@ level: Intermediate
 
 The `COUNT` command is used to count the total number of non-null values for a particular  column. You can also count the entire table.
 
-For Example:
+**For Example:**
 
-![img](/static/images/Pastedimage20231116133453.png)
+<img src="/static/images/Pastedimage20231116133453.png" width="1500" />
 
 The above is the [`employees`](01.%20Introduction)  table. The following syntax is used to get the total number of rows in this table.
 
@@ -22,9 +22,9 @@ select count(*) from employees;
 
 \*  refers to the entire table.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116133523.png)
+<img src="/static/images/Pastedimage20231116133523.png" width="500" />
 
 Now, let's count the non-null `phone_number` rows.
 
@@ -32,9 +32,9 @@ Now, let's count the non-null `phone_number` rows.
 select count(phone_number) from employees;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116133548.png)
+<img src="/static/images/Pastedimage20231116133548.png" width="600" />
 
 You can see that when we counted the entire table using `*` the result was 31, but when I counted only `phone_number` rows, the result was 25.  It's because some records have a null value in the `phone_number` column. 
 
@@ -46,7 +46,7 @@ The `count/0` function is used to get the total number of inserted records in a 
 
 ##### Expressions
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Employee 
@@ -56,13 +56,13 @@ HR.Employee
 
 Here, `c` is the reference variable that refers to `HR.Employee`. Refer [[02. Aliases in Ecto]] to know about aliases/reference variables.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116133750.png)
+<img src="/static/images/Pastedimage20231116133750.png" width="700" />
 
 The total number of records for `HR.Employees` is 31 as you can see in the above example.
 
-##### Keywords
+#### Keywords
 
 ``` Elixir
 HR.Repo.all(from c in HR.Employee, select: count())  
@@ -75,7 +75,7 @@ The `count/1` function is used to calculate the total number of non-null values 
 
 ##### Expressions
 
-Example:
+**Example:**
 
 ``` Elixir
 HR.Employee 
@@ -85,13 +85,13 @@ HR.Employee
 
 `count(c.phone_number)` ->  We are calculating the count of `phone_number` for `HR.Employee`.`c` is the reference variable referring to the `HR.Employee`. 
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116134048.png)
+<img src="/static/images/Pastedimage20231116134048.png" width="800" />
 
 The total number of records that `phone_number` has a non-null value is 19.
 
-##### Keywords
+#### Keywords
 
 ``` Elixir
 HR.Repo.all(from c in HR.Employee, select: count(c.phone_number))

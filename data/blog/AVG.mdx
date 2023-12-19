@@ -10,7 +10,7 @@ level: Intermediate
 
 The `AVG` is used to find out the average of a column. It is only used on numerical values.
 
-For Example:
+**For Example:**
 
 ``` SQL
 select avg(salary) from employees;
@@ -18,9 +18,9 @@ select avg(salary) from employees;
 
 The above code will give the average of `salary` from[`employees`](01.%20Introduction). 
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116153449.png)
+<img src="/static/images/Pastedimage20231116153449.png" width="600" />
 
 As you can see in the above example, the average of `salary` is 8041.9354838709677419.
 
@@ -32,7 +32,7 @@ As you can see in the above example, the average of `salary` is 8041.93548387096
 
 ##### Expressions
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
@@ -40,7 +40,7 @@ HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
 
 `avg(c.salary)` will give the average of column `salary` from `HR.Employee`. Here, `c` is the reference variable that refers to `HR.Employee`. Refer [[02. Aliases in Ecto]] to know about aliases/reference variables.
 
-Result:
+**Result:**
 
 ```Elixir
 iex(64)> HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()

@@ -23,15 +23,15 @@ We are using the `employees` table and `jobs` table for this example.
 
 #####  `employees` table
 
-![img](/static/images/Pastedimage20231107104248.png)
+<img src="/static/images/Pastedimage20231107104248.png" width="1500" />
 
 ##### `jobs` table
 
-![img](/static/images/Pastedimage20231107104406.png)
+<img src="/static/images/Pastedimage20231107104406.png" width="700"/>
 
 The `employees` and the `jobs` tables have a common column called `job_id`. We can join these two tables and create one big table using this `job_id` column.  
 
-For Example:
+**For Example:**
 
 ``` SQL
 select * from employees join jobs on employees.job_id = jobs.job_id;
@@ -46,9 +46,9 @@ Query Explanation:
 - So the above line means, joining `employees` and `jobs` tables that are related to each other by the column `job_id`.
 - We are selecting every column from both tables to appear.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116224817.png)
+<img src="/static/images/Pastedimage20231116224817.png" width="1500" />
 
 In the above table, you can see that both `employees` and `jobs` are joined together, with all the columns appearing. All columns are here because we select `*`, which means every column from both tables.
 
@@ -60,9 +60,9 @@ select employees.first_name, employees.last_name, employees.phone_number, jobs.m
 
 In the above example, we are selecting only `first_name` from `employees`, `last_name` from `employees`, `phone_number` from `employees`, and `min_salary` from `jobs`.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116224852.png)
+<img src="/static/images/Pastedimage20231116224852.png" width="1500" />
 
 
 # Ecto query for `join` 
@@ -84,18 +84,18 @@ Example:
 
 We are using the `countries` and `regions`table for this query. Refer [[01. Introduction]] to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
 
-![img](/static/images/Pastedimage20231107155511.png)
+<img src="/static/images/Pastedimage20231107155511.png" width="700" />
 
 PSQL example `regions` table
 
-![img](/static/images/Pastedimage20231107155541.png)
+<img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
 Now let's perform an `inner join` for these two tables in `Ecto`.
 
 ##### Expressions
 
 
-For Example:
+**For Example:**
 
 ```Elixir
  HR.Region 
@@ -107,7 +107,7 @@ For Example:
 
 The above query will only return rows whose `region_id` is the same in both  `HR.Region` and `HR.Country`. Here, `r` and `c` are reference variable for `HR.Region` and `HR.Country`. To know about reference variable refer [[02. Aliases in Ecto]]
 
-Explanation:
+**Explanation:**
 ######  `join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id)` 
 
 - `:inner` is a join type
@@ -115,7 +115,7 @@ Explanation:
 - `c in HR.Country` is another schema with a reference variable
 - `on: r.region_id == c.region_id` is the common field for both schema.
 
-Result:
+**Result:**
 
 ``` Elixir 
 iex(3)> HR.Region |> join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r, c])|>  HR.Repo.all() 
@@ -451,7 +451,7 @@ iex(3)> HR.Region |> join(:inner, [r], c in HR.Country, on: r.region_id == c.reg
 
 In the above IEx shell, you can see that only matching `region_id`  values in both `HR.Region` and `HR.Country` are returned. 
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from r in HR.Region, join: c in HR.Country, on: r.region_id == c.region_id, select: [r, c]) 

@@ -10,11 +10,11 @@ level: Intermediate
 
 The `distinct` command is used to get unique values from any columns in a table. Using the `distinct` keyword, you can see all the distinct values present in a particular table. 
 
-For Example:
+**For Example:**
 
 Let's use the `locations` table for this query. To learn more about this table and the database, refer to [[01. Introduction]].
 
-![img](/static/images/Pastedimage20231108164532.png)
+<img src="/static/images/Pastedimage20231108164532.png" width="1500"/>
 
  you can find what are all the `country_id` values present in the `locations` table. When you use the `distinct` keyword for any column, the duplicates in that column won't be returned.  Although the `locations` table has 3 `country_id` entries as `US`, using `distinct` will only return one. Even if there are 10 `street_address` entries with the same `country_id`, `distinct` will only return one.
 
@@ -24,9 +24,9 @@ select distinct country_id from locations;
 
 The above query will return all the unique `country_id` values in the `locations` table.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116223140.png)
+<img src="/static/images/Pastedimage20231116223140.png" width="600"/>
 
 We have 4 unique `country_id` values in the `locations` table.
 
@@ -38,7 +38,7 @@ In Ecto, you can obtain all unique values in a field using the `distinct/3` func
 
 ##### Expressions
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Location 
@@ -50,13 +50,13 @@ HR.Location
 The above query will return all the unique values from the `country_id` field in `HR.Location`. Here `l` is the reference variable that refers to `HR.Location`. To know about reference variable visit [[02. Aliases in Ecto]] 
 
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231116223313.png)
+<img src="/static/images/Pastedimage20231116223313.png" width="900" />
 
 So we have a total of 4 unique `country_id` values present in `HR.Location`.
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from l in HR.Location, distinct: true, select: l.country_id)

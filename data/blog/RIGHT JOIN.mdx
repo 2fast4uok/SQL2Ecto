@@ -10,15 +10,15 @@ level: Intermediate
 
 The `right join` command returns all rows from the right table and only the  matching rows from the left table.
 
-For example:
+**For example:**
 
 Let's use the `countries` table and `regions` table. Refer [[01. Introduction]] to know about this table and the database.
 
-![img](/static/images/Pastedimage20231107155511.png)
+<img src="/static/images/Pastedimage20231107155511.png" width="600" />
 
 `regions` table
 
-![img](/static/images/Pastedimage20231107155541.png)
+<img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
 
 We have the `countries` and `regions` table. Let's perform a `right join` on them.
@@ -29,23 +29,23 @@ select * from countries right join regions on countries.region_id = regions.regi
 
 The `right join` will return all rows from the `regions` table and only the rows from the `countries` table where the `region_id` column matches  the two tables.
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231107160949.png)
+<img src="/static/images/Pastedimage20231107160949.png"  width="1100" />
 
 You can see that all records from the `regions` table are returned here, even though the `region_name` values like  `India`, `China`, and `Korean`  didn't have matching values with the `countries` table.   
 
 # Ecto query for `right join`
 
-#### [join/5](#### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5))
+#### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
-The `join/5` function is used to perform a `right join` in Ecto. For more information about the `join/5` function, visit my [[08. join]] page. Now let's explore the `:right` option in join.
+The `join/5` function is used to perform a `right join` in Ecto. For more information about the `join/5` function, visit my [[08. join]] page. Now letskk's explore the `:right` option in join.
 
 ###### `:right` option in join
 
 ##### Expression
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Region 
@@ -64,7 +64,7 @@ The above query will return all records from `HR.Country` on the right side of t
 - `c in HR.Country` is another schema and reference variable.
 - `on: r.region_id == c.region_id)` condition.
 
-Result:
+**Result:**
 
 ``` Elixir
 iex(8)> HR.Region |> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r,c]) |> HR.Repo.all() 
@@ -400,7 +400,7 @@ iex(8)> HR.Region |> join(:right, [r], c in HR.Country, on: r.region_id == c.reg
 
 In the above result, you can see that all records in `HR.Country` are returned. But only records in `HR.Region` that have the same value in the `region_id` are returned.
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from r in HR.Region, right_join: c in HR.Country, on: r.region_id == c.region_id, select: [r, c])

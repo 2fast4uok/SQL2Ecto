@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.
 
 I wanted to port my existing HTML blog to Nextjs and Tailwind CSS but there was no easy out of the box template to use so I decided to use [timlrx's](https://github.com/timlrx/tailwind-nextjs-starter-blog), where he adapted the design from [Tailwindlabs blog](https://github.com/tailwindlabs/blog.tailwindcss.com).
 
-I wanted the blog to incorporate [Sangeethailango] (https://github.com/sangeethailango/SQL-Ecto-writings)'s SQL to Ecto knowledge as she has experience with Elixir.
+I wanted the blog to incorporate [Sangeethailango](https://github.com/sangeethailango/SQL-Ecto-writings) SQL to Ecto knowledge as she has experience with Elixir.
 
 ## Installation
 
@@ -20,7 +20,7 @@ yarn
 ```
 
 ## Development
-
+k
 First, run the development server:
 
 ```bash

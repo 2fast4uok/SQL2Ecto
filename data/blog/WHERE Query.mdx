@@ -10,7 +10,7 @@ level: Basic
 
 The `where` command is used to select records based on a condition. It returns only those records that satisfy the conditions specified in the `where` command, effectively filtering the records."
 
-For Example:
+**For Example:**
 
 In the [employees](01.%20Introduction) table, Let's select only those records whose `salary` is 9000.
 
@@ -20,15 +20,15 @@ select * from employees where salary = 9000;
 
 Following `where`,  `salary` is the  column name which has to be equal to the value 9000. `select` `from` `where` has to be in this order only.
 
-Result:
+**Result:**
 
-<img src="/static/images/Pastedimage20231114101908.png" width="1"
+<img src="/static/images/Pastedimage20231114101908.png" width="1500"/>
 
 ###### **Note:**
 
  In SQL, anything inside single quotes (' ') is treated as a string. For example, '123' is a string, and 'name' is also a string. Anything inside double quotes (' ') is treated as a column name. If you put any words inside double quotes, SQL will consider them as a column name and search for it."
 
-![img](/static/images/Pastedimage20231114102053.png)
+<img src="/static/images/Pastedimage20231114102053.png" width="900" />
 
 As you see In the above example, it says ***column "9000" does not exist***. SQL considers "9000" as a column name. 
 
@@ -39,9 +39,9 @@ As you see In the above example, it says ***column "9000" does not exist***. SQL
 
 ##### Expression
 
-In [Ecto.Query]([Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)., `where/3` is used to fetch records based on the particular value.
+In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) `where/3` is used to fetch records based on the particular value.
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Employee 
@@ -49,7 +49,7 @@ HR.Employee
 |> HR.Repo.all() 
 ```
 
-Result:
+**Result:**
 
  ```Elixir
  IEx(26)> HR.Employee |> where([c], c.salary == 9000) |> HR.Repo.all() 
@@ -86,7 +86,7 @@ Result:
 
 `where([c], c.salary == 9000)` -> Here `[c]` is the reference variable which is used to refer to `HR.Employee`. This query will fetch the `HR.Employee` struct which `salary` is equal to 9000.  Refer [[02. Aliases in Ecto]] to know about aliases/reference variables.
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: c.salary == 9000) 
