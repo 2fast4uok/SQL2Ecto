@@ -13,7 +13,7 @@ is used to check for multiple conditions in a query. `and` will return records w
 
 **For Example:**
 
-Now let's apply this `and` condition for the [`employees`](01.%20Introduction) table.
+Now let's apply this `and` condition for the <a href="/blog/Introduction">`employees`</a> table.
 
 ``` SQL
 select * from employees where phone_number is nill and first_name ILIKE 'J%';
@@ -33,7 +33,7 @@ You can use as many `and` statements you want.
 # Ecto query for `and`
 
 #### [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2)
-##### Expression
+#### Expression
 
 In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) You can check for two condition with the [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2) function
 
@@ -51,7 +51,7 @@ Here we have checking for two functions.
 -  `is_nil(c.phone_number)` 
 - `ilike(c.first_name, "J%"))`
 
-The `c` in both condition is reference variable which is referring to the struct `HR.Employee`.    To know about reference variable refer [reference variable](02.%20Aliases%20in%20Ecto) 
+The `c` in both condition is reference variable which is referring to the struct `HR.Employee`.    To know about reference variable refer <a href="/blog/Aliases in Ecto">reference variable</a>.
 
 **Result:**
 

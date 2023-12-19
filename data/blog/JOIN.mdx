@@ -21,7 +21,7 @@ works.
 
 We are using the `employees` table and `jobs` table for this example.
 
-#####  `employees` table
+####  `employees` table
 
 <img src="/static/images/Pastedimage20231107104248.png" width="1500" />
 
@@ -82,7 +82,7 @@ Now let's see `:inner` join.
 
 Example:
 
-We are using the `countries` and `regions`table for this query. Refer [[01. Introduction]] to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
+We are using the `countries` and `regions`table for this query. Refer <a href="/blog/Introduction">Introduction</a> to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
 
 <img src="/static/images/Pastedimage20231107155511.png" width="700" />
 
@@ -105,7 +105,7 @@ Now let's perform an `inner join` for these two tables in `Ecto`.
 ```
 
 
-The above query will only return rows whose `region_id` is the same in both  `HR.Region` and `HR.Country`. Here, `r` and `c` are reference variable for `HR.Region` and `HR.Country`. To know about reference variable refer [[02. Aliases in Ecto]]
+The above query will only return rows whose `region_id` is the same in both  `HR.Region` and `HR.Country`. Here, `r` and `c` are reference variable for `HR.Region` and `HR.Country`. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 
 **Explanation:**
 ######  `join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id)` 

@@ -17,7 +17,7 @@ The `between` command is used in the `where` to check for a range. It verifies w
 select * from employees where job_id between 5 and 9;
 ```
 
-The above code will check for [`employees`](01.%20Introduction) whose `job_id` falls within the range of 5 to 9. It  matches exact values.
+The above code will check for <a href="/blog/Introduction">`employees`</a> whose `job_id` falls within the range of 5 to 9. It  matches exact values.
 
 Alternatively, the same result can be achieved using the following SQL code:
 
@@ -35,5 +35,5 @@ As seen in the displayed records, the `job_id` values are between 5 and 9.
 
 # Ecto query for `between`
 
-Ecto does not have a specific `between` function. However, you can filter your records within a particular range using the `fragement/1`, as described in the https://hexdocs.pm/ecto/Ecto.Query.API.html#fragment/1, or by utilizing comparison operators.
+Ecto does not have a specific `between` function. However, you can filter your records within a particular range using the `fragement/1`, as described in the [fragment](https://hexdocs.pm/ecto/Ecto.Query.API.html#fragment/1), or by utilizing comparison operators.
 

@@ -16,7 +16,7 @@ The `HAVING` command is used to perform aggregate functions such as `AVG`,`COUNT
 select salary, count(salary) from employees group by salary having count(salary) = 2;
 ```
 
-Here, we are only returning `salary` and the count of the grouped `salary` if the count is equal to 2. We are specifying which grouped items should be returned in the table [`employees`](https://chat.openai.com/c/01.%20Introduction). The count should be equal to 2.
+Here, we are only returning `salary` and the count of the grouped `salary` if the count is equal to 2. We are specifying which grouped items should be returned in the table <a href="/blog/Introduction">`employees`</a>. The count should be equal to 2.
 
 **Result:**
 
@@ -42,7 +42,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-`having([c], count(c.salary)==2)`  -> `[c]` is the  [reference variable](02.%20Aliases%20in%20Ecto). Refer [[02. Aliases in Ecto]] to understand aliases/reference variables 
+`having([c], count(c.salary)==2)`  -> `[c]` is the  <a href="/blog/Aliases in Ecto">reference variable</a>. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables 
 `count(c.salary)==2)` ->  Here,  the `count` function is used to specify that the count of the `salary` should be 2. We are specifying to return the grouped rows where the count of the `salary` is equal to 2.
 
 **Result:**

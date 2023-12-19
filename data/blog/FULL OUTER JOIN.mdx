@@ -12,7 +12,7 @@ A `full outer join` will return unmatched and matched values from both tables.
 
 **For Example:**
 
-Let's use the `job_history` table and `regions` table. Refer [[01. Introduction]] to know about this table and the database.
+Let's use the `job_history` table and `regions` table. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
 
 <img src="/static/images/Pastedimage20231107162852.png" width="400" />
  
@@ -35,7 +35,7 @@ You can see that all columns are returned.
 
 #### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
-The `join/5` function is used to perform a full outer join in `Ecto`. To learn more about the `join/5` function, visit my [[08. join]] page. Now let's use the `:full` option in join.
+The `join/5` function is used to perform a full outer join in `Ecto`. To learn more about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. Now let's use the `:full` option in join.
 
 ###### `:full` option in join
 
@@ -55,7 +55,7 @@ So the above query will return all matching and non-matching records in both tab
 `|> join(:full, [r], c in HR.Country, on: r.region_id == c.region_id) `
 
 - It accepts the `HR.Region` schema as first argument. 
-- `[r]` is the reference variable for the `HR.Region` schema. To understand reference variables, refer to [[02. Aliases in Ecto]].
+- `[r]` is the reference variable for the `HR.Region` schema. To understand reference variables, refer to <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and reference variable.
 - `on: r.region_id == c.region_id)` is the condition.
 

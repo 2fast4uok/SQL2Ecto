@@ -14,7 +14,7 @@ The `union` command is used to do multiple queries at once. By using `union`,  B
 
 **For Example:**
 
-Let's use the `countries` table and `regions` table for this example. Refer [[01. Introduction]] to know about this table and the database.
+Let's use the `countries` table and `regions` table for this example. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
 
 <img src="/static/images/Pastedimage20231108115523.png" width="400" />
 
@@ -73,7 +73,7 @@ HR.Country
 |> select([c], %{"region_id" => c.region_id}) 
 ```
 
-Here, we are selecting `region_id` from `HR.Country` and assigning it to a variable called `region_id_from_country`. Here `c` is the reference variable; refer [[02. Aliases in Ecto]] to know about reference variables.
+Here, we are selecting `region_id` from `HR.Country` and assigning it to a variable called `region_id_from_country`. Here `c` is the reference variable; refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about reference variables.
 
 
 ``` Elixir

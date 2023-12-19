@@ -12,7 +12,7 @@ The `like` operator is used to match string values in `where`. You can fetch rec
 
 **For Example:**
 
- Let's write a query to fetch [`employees`](01.%20Introduction) records whose `first_name` starts with the letter A followed by any other character or numbers.
+ Let's write a query to fetch <a href="/blog/Introduction">`employees`</a> records whose `first_name` starts with the letter A followed by any other character or numbers.
 
 ``` SQL
 select * from employees where first_name like 'A%';
@@ -53,7 +53,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers.  Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer [[02. Aliases in Ecto]] to know  about aliases/reference variables.
+On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers.  Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know  about aliases/reference variables.
 
 `ilike/2`
 

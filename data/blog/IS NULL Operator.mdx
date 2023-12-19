@@ -16,7 +16,7 @@ Example:
 select * from employees where phone_number is null;
 ```
 
-The above code will fetch [`employees`](01.%20Introduction) whose `phone_number` is null or has no value inserted.
+The above code will fetch <a href="/blog/Introduction">`employees`</a> whose `phone_number` is null or has no value inserted.
 
 **Result:**
 
@@ -41,7 +41,7 @@ HR.Employee
 ```
 
 The above code searches in the `HR.Employee` struct where `phone_number` is set to nil. 
-`where([c], is_nil(c.phone_number))` -> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer [[02. Aliases in Ecto]] to know about aliases/reference variables. 
+`where([c], is_nil(c.phone_number))` -> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables. 
 
 ``` Elixir
 IEx(11)> HR.Employee |> where([c], is_nil(c.phone_number)) |> HR.Repo.all()

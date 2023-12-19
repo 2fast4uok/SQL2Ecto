@@ -14,7 +14,7 @@ You can use `where`, `and` in a `join` to filter your table. If you want your ta
 
 **For Example:**
 
-We are using the [`countries`](01.%20Introduction)table and [`regions`](01.%20Introduction) for this example. 
+We are using the <a href="/blog/Introduction">`countries`</a> table and <a href="/blog/Introduction">`regions`</a> for this example. 
 
 <img src="/static/images/Pastedimage20231109095918.png" width="600" />
 
@@ -69,7 +69,7 @@ HR.Country
 |> HR.Repo.all()
 ```
 
-- `join(:left, [p], r in HR.Region, on: p.region_id == r.region_id)` -> Left join, joining rows whose `region_id` is the same. Here `p` and `r` are reference variables. Refer to [[02. Aliases in Ecto]] to understand reference variables.
+- `join(:left, [p], r in HR.Region, on: p.region_id == r.region_id)` -> Left join, joining rows whose `region_id` is the same. Here `p` and `r` are reference variables. Refer to <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand reference variables.
 - `where([p], p.region_id == 2)` -> Only include rows whose `region_id` is 2. You can also use other comparison operators here, such as !=, &lt;, &gt;.
 
 **Result:**
