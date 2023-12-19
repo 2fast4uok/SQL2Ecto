@@ -1,15 +1,16 @@
 ---
 title: NOT Operator
 lesson: 'LESSON 12'
-date: '1111-11-11'
+date: '999-12-19'
 draft: false
 summary: The `not` command is used to exclude some values from the records.
 layout: PostSimple
+level: Basic
 ---
 
 The `not` command is used to exclude some values from the records. 
 
-Example:
+**Example:**
 
 ``` SQL
 select * from employees where job_id = 5 and not salary < 9000;
@@ -17,9 +18,9 @@ select * from employees where job_id = 5 and not salary < 9000;
 
 The above query will fetch `employes` whose `job_id` is 5, but the salary is not less than 9000.
 
-Result:
+**Result:**
 
-![img](/static/images/Screenshotfrom2023-11-0411-14-26.png)
+<img src="/static/images/Screenshotfrom2023-11-0411-14-26.png" width="1500" />
 
 You can see in the above example that we have only 2 `employees` with `job_id` 5 and a salary of more than 9000.
 
@@ -55,7 +56,7 @@ HR.Employee
 
 `where([c], c.job_id == 5 and not(c.salary<9000))`-> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. To know about reference variable, refer to [[02. Aliases in Ecto]]. We are writing a condition saying `job_id` should be 5, and the salary is not less than 9000.
 
-Result:
+**Result:**
 
 ``` Elixir
 IEx(16)> HR.Employee |> where([c], c.job_id == 5 and not(c.salary<9000) ) |> HR.Repo.all()
@@ -90,7 +91,7 @@ IEx(16)> HR.Employee |> where([c], c.job_id == 5 and not(c.salary<9000) ) |> HR.
 ]
 ```
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: c.job_id == 5 and not(c.salary < 9000))

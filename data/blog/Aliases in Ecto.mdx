@@ -1,23 +1,24 @@
 ---
 title: Aliases in Ecto
 lesson: 'ECTO INTRODUCTION'
-date: '1111-11-11'
+date: '999-12-31'
 draft: false
 summary: In Ecto, aliases are used to set names for modules. You can reference the module by that name and access everything inside it.
 layout: PostSimple
+level: Basic
 ---
 
 In Ecto, aliases are used to set names for modules. You can reference the module by that name and access everything inside it. Essentially, it is a variable used to refer to a module. Whenever you want to access that module, you can use that variable to access it. You can use these aliases in both modules and Ecto queries.
 
-##### In modules,
+##### **In modules,**
 
-![img](/static/images/Pastedimage20231114171110.png)
+<img src="/static/images/Pastedimage20231114171110.png" alt="img" width="400" height="300" />
 
  This module, `SqlEcto.Hr`, is created for project functionalities. It includes two aliases: `HR.Country` and `HR.Repo`.
 
 `alias HR.Country` -> Meaning, In the `SqlEcto.HR` module, whenever we want to do some functionalities with `HR.Country`, we can use `Country` instead of `HR.Country`. This `alias` will create an alias for the module with its last word. For `HR.Repo` the alias is `Repo`.  This practice helps developers use their time more efficiently, as they can use only the last word instead of typing the entire module name.
 
-##### In Ecto queries,
+##### **In Ecto queries,**
 
 
 ```Elixir
@@ -39,9 +40,9 @@ HR.Country
 
 We are putting the variable inside a list.  Otherwise, it will result in an error.
 
-![img](/static/images/Pastedimage20231114175306.png)
+<img src="/static/images/Pastedimage20231114175306.png" width="1400" height="300" />
 
-The error indicates that the binding (the referenced variable) should be a list." So The output of this query will be a list because we put our alias inside a list. 
+The error indicates that the binding (the referenced variable) should be a list. So The output of this query will be a list because we put our alias inside a list. 
 
 retrieve specific fields, you can do so by.
 

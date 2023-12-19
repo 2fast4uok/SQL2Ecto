@@ -1,15 +1,16 @@
 ---
 title: LIKE Operator
 lesson: 'LESSON 6'
-date: '1111-11-11'
+date: '999-12-25'
 draft: false
 summary: The `like` operator is used to match string values in `where`. You can fetch records that contain specific string characters.
 layout: PostSimple
+level: Basic
 ---
 
 The `like` operator is used to match string values in `where`. You can fetch records that contain specific string characters.
 
-For Example:
+**For Example:**
 
  Let's write a query to fetch [`employees`](01.%20Introduction) records whose `first_name` starts with the letter A followed by any other character or numbers.
 
@@ -17,34 +18,34 @@ For Example:
 select * from employees where first_name like 'A%';
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Screenshotfrom2023-11-0314-00-22.png)
+<img src="/static/images/Screenshotfrom2023-11-0314-00-22.png" width="1500" />
 
-##### `ilike`
+### `ilike`
 
 `like` is case-sensitive. `ilike` is case-insensitive. This Means If you put `like A%` it will only give those records whose `first_name` starts with **A** not the small letter **a**, to also get the records started with a, use `ilike`.
 
-![img](/static/images/Screenshotfrom2023-11-0314-42-44.png)
+<img src="/static/images/Screenshotfrom2023-11-0314-42-44.png" width="1500" />
 
 ``` SQL
 select * from employees where first_name ilike 'a%';
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Screenshotfrom2023-11-0314-44-12.png)
+<img src="/static/images/Screenshotfrom2023-11-0314-44-12.png" width="1500" />
 
 
 # Ecto query for `like`
 
-#### [like/2]( [like/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#like/2)) 
+#### [like/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#like/2)
 
 ##### Expression
 
-In [Ecto.Query]( [Ecto.Query]([Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)) you can do it with the `like/2` function from `Ecto.Query`.
+In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) you can do it with the `like/2` function from `Ecto.Query`.
 
-For Example:
+**For Example:**
 
 ``` Elixir
 HR.Employee 
@@ -111,7 +112,7 @@ IEx(27)> HR.Employee |> where([c], ilike(c.first_name, "a%")) |> HR.Repo.all()
 ```
 
 
-##### Keywords
+#### Keywords
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: like(c.first_name, "A%"))  

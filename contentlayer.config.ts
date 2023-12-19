@@ -92,6 +92,7 @@ export const Blog = defineDocumentType(() => ({
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
     lesson: { type: 'string' },
+    level: {type: 'string'},
   },
   computedFields: {
     ...computedFields,

@@ -1,17 +1,18 @@
 ---
 title: ORDER BY
 lesson: 'LESSON 13'
-date: '1111-11-11'
+date: '999-12-18'
 draft: false
 summary: The `order by` command is used to alphabetically order records. `desc` helps in descending order and `asc` helps in ascending order. The default ordering is `asc`.
 layout: PostSimple
+level: Basic
 ---
 
 The `order by` command is used to alphabetically order records. `desc` helps in descending order and `asc` helps in ascending order. The default ordering is `asc`.
 
 #### `asc`
 
-Example:
+**Example:**
 
 ``` SQL
  select * from employees order by last_name asc;
@@ -19,15 +20,15 @@ Example:
 
 Here, we are ordering [`employees`](01.%20Introduction)  by `last_name` in ascending order.
 
-Result:
+**Result:**
 
-![img](/static/images/Screenshotfrom2023-11-0411-53-29.png)
+<img src="/static/images/Screenshotfrom2023-11-0411-53-29.png" width="1500" />
 
 In the above example, you can see that `last_name` is ordered in ascending order, starting from A.
 
 #### `desc`
 
-Example:
+**Example:**
 
 ``` SQL
 select * from employees order by last_name desc;
@@ -35,7 +36,7 @@ select * from employees order by last_name desc;
 
 `desc` will be in descending order.
 
-![img](/static/images/Screenshotfrom2023-11-0411-58-04.png)
+<img src="/static/images/Screenshotfrom2023-11-0411-58-04.png" width="1500" />
 
 `last_name` is in descending order, starting from W.
 
@@ -59,7 +60,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-Result:
+**Result:**
 
 ```Elixir
 IEx(18)> HR.Employee |> order_by(asc: :last_name) |> HR.Repo.all()
@@ -221,7 +222,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-Result:
+**Result:**
 
 ``` Elixir
 IEx(20)> HR.Employee |> order_by(desc: :last_name) |> HR.Repo.all()
@@ -321,15 +322,15 @@ IEx(20)> HR.Employee |> order_by(desc: :last_name) |> HR.Repo.all()
 ```
 
 You can see that `last_name` starts from `Whalen`.
-##### Keywords
+#### Keywords
 
-##### `asc`
+#### `asc`
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, order_by: [asc: :last_name])
 ```
 
-##### `desc`
+#### `desc`
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, order_by: [desc: :last_name])

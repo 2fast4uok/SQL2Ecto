@@ -1,10 +1,11 @@
 ---
 title: IS NULL Operator
-lesson: 'LESSON 9'
-date: '1111-11-11'
+lesson: 'LESSON 10'
+date: '999-12-21'
 draft: false
 summary: The `is null` command is used to fetch records with no value or null value.  It is used in the `where` command.
 layout: PostSimple
+level: Basic
 ---
 
 The `is null` command is used to fetch records with no value or null value.  It is used in the `where` command.
@@ -17,15 +18,15 @@ select * from employees where phone_number is null;
 
 The above code will fetch [`employees`](01.%20Introduction) whose `phone_number` is null or has no value inserted.
 
-Result:
+**Result:**
 
-![img](/static/images/Screenshotfrom2023-11-0311-45-03.png)
+<img src="/static/images/Screenshotfrom2023-11-0311-45-03.png" width="1400" />
 
 In the above example, you can see that for all 6 rows, there is no value inserted in the `phone_number` column.
 
 # Ecto query for `is null`
 
-####  [is_nil/1]([is_nil/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#is_nil/1))
+#### [is_nil/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#is_nil/1)
 
 ##### Expression
 
@@ -130,7 +131,7 @@ IEx(12)>
 
 In the above example, both records have `nil` as a value for `phone_number`.
 
-##### Keywords
+#### Keywords
 
 ``` Elixir
 HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number)) 

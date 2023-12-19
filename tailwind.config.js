@@ -1,5 +1,5 @@
 // @ts-check
-const { Raleway } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 /** @type {import("tailwindcss/types").Config } */
@@ -22,7 +22,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--raleway)'],
+        sans: ['var(--raleway)', ...fontFamily.sans],
       },
       colors: {
         primary: colors.pink,
@@ -32,11 +32,11 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.blue.600'),
               '&:hover': {
-                color: `${theme('colors.primary.600')}`,
+                color: `${theme('colors.blue.400')}`,
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.blue.400') },
             },
             'h1,h2': {
               fontWeight: '700',
@@ -46,18 +46,34 @@ module.exports = {
               fontWeight: '600',
             },
             code: {
-              color: theme('colors.indigo.500'),
+              color: theme('colors.indigo.700'),
+              background: theme('backgroundColor.neutral.200'),
+              paddingLeft: '5px',
+              paddingRight: '5px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '0.25rem',
+            },
+            'code::before': {
+              content: 'none',
+            },
+            'code::after': {
+              content: 'none',
             },
           },
         },
         invert: {
           css: {
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.blue.500'),
               '&:hover': {
-                color: `${theme('colors.primary.400')}`,
+                color: `${theme('colors.blue.400')}`,
               },
-              code: { color: theme('colors.primary.400') },
+              code: {color: theme ('colors.blue.300') },
+            },
+            code: {
+              color: theme('colors.indigo.400'),
+              background: theme('backgroundColor.neutral.800'),
             },
             'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),

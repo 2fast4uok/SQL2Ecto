@@ -1,15 +1,16 @@
 ---
 title: LIMIT Query
 lesson: 'LESSON 2'
-date: '1111-11-11'
+date: '999-12-29'
 draft: false
 summary: The `limit` command is used to limit the number of records from being fetched.
 layout: PostSimple
+level: Basic
 ---
 
 The `limit` command is used to limit the number of records from being fetched. 
 
-For Example:
+**For Example:**
 
 As explained in the [[01. Introduction]] part, the `employees` table has a total of 31 records.  Now let's set a limit to it.
 
@@ -17,9 +18,9 @@ As explained in the [[01. Introduction]] part, the `employees` table has a total
  select * from employees limit 10;
 ```
 
-Result:
+**Result:**
 
-![img](/static/images/Pastedimage20231114101217.png)
+<img src="/static/images/Pastedimage20231114101217.png" width="1500" />
 
 we are limiting the records to 10.
 
@@ -31,7 +32,7 @@ we are limiting the records to 10.
 
 You can limit the records using the `limit/2` function from [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html).
 
-For Example: 
+**For Example:** 
 
 ``` Elixir
 HR.Employee 
@@ -39,7 +40,7 @@ HR.Employee
 |> HR.Repo.all() 
 ```
 
-Result:
+**Result:**
 
 ```Elixir
 IEx(24)> HR.Employee |> limit(2) |> HR.Repo.all() 
@@ -75,7 +76,7 @@ IEx(24)> HR.Employee |> limit(2) |> HR.Repo.all()
 ```
 
 
-##### Keywords
+#### Keywords
 
 Limit the records to 2 using the Keywords format
 
