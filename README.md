@@ -1,6 +1,6 @@
 ![SQL2Ecto Banner](public/static/images/sql2ectobanner.png)
 
-# Tailwind Nextjs Starter Blog
+# SQL2Ecto Starter Blog
 
 This is a [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) project that shows EdTech content to learn SQL and Ecto. Ecto is an official Elixir project providing a database wrapper and integrated query language.
 
@@ -8,7 +8,11 @@ This is a [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.
 
 I wanted to port my existing HTML blog to Nextjs and Tailwind CSS but there was no easy out of the box template to use so I decided to use [timlrx's](https://github.com/timlrx/tailwind-nextjs-starter-blog), where he adapted the design from [Tailwindlabs blog](https://github.com/tailwindlabs/blog.tailwindcss.com).
 
-I wanted the blog to incorporate [Sangeethailango](https://github.com/sangeethailango/SQL-Ecto-writings) SQL to Ecto knowledge as she has experience with Elixir.
+I wanted the blog to incorporate [Sangeetha Ilango's](https://github.com/sangeethailango/SQL-Ecto-writings) SQL to Ecto knowledge as she has experience with Elixir.
+
+Before making this blog Sangeetha wanted a better way to communicate SQL than the traditional schooling method, she believed that teaching SQL in an interesting and simple way makes it very easy to learn.
+
+She also wanted to help the Elixir community by including Ecto into the mix.
 
 ## Installation
 
@@ -20,11 +24,11 @@ yarn
 ```
 
 ## Development
-k
+
 First, run the development server:
 
 ```bash
-yarn dev
+yarn dev / npm start
 ```
 
 
@@ -68,14 +72,6 @@ Then, open [http://localhost:3000](http://localhost:3000) with your browser to s
 Content is modelled using [Contentlayer](https://www.contentlayer.dev/), which allows you to define your own content schema and use it to generate typed content objects. See [Contentlayer documentation](https://www.contentlayer.dev/docs/getting-started) for more information.
 
 ## Deploy
-
-**Vercel**  
-The easiest way to deploy the template is to deploy on [Vercel](https://vercel.com). Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-**Netlify**
-[Netlify](https://www.netlify.com/)’s Next.js runtime configures enables key Next.js functionality on your website without the need for additional configurations. Netlify generates serverless functions that will handle Next.js functionalities such as server-side rendered (SSR) pages, incremental static regeneration (ISR), `next/images`, etc.
-
-See [Next.js on Netlify](https://docs.netlify.com/integrations/frameworks/next-js/overview/#next-js-runtime) for suggested configuration values and more details.
 
 **Static hosting services / GitHub Pages / S3 / Firebase etc.**
 

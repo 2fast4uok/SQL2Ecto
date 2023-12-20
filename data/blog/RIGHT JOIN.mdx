@@ -12,7 +12,7 @@ The `right join` command returns all rows from the right table and only the  mat
 
 **For example:**
 
-Let's use the `countries` table and `regions` table. Refer [[01. Introduction]] to know about this table and the database.
+Let's use the `countries` table and `regions` table. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
 
 <img src="/static/images/Pastedimage20231107155511.png" width="600" />
 
@@ -39,7 +39,7 @@ You can see that all records from the `regions` table are returned here, even th
 
 #### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
-The `join/5` function is used to perform a `right join` in Ecto. For more information about the `join/5` function, visit my [[08. join]] page. Now letskk's explore the `:right` option in join.
+The `join/5` function is used to perform a `right join` in Ecto. For more information about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. Now lets explore the `:right` option in join.
 
 ###### `:right` option in join
 
@@ -60,7 +60,7 @@ The above query will return all records from `HR.Country` on the right side of t
 `|> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) `
 
 - It is accepts the `HR.Region` schema as first argument. 
-- `[r]` is the reference variable for `HR.Region` schema. To know about reference variable refer [[02. Aliases in Ecto]]
+- `[r]` is the reference variable for `HR.Region` schema. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and reference variable.
 - `on: r.region_id == c.region_id)` condition.
 

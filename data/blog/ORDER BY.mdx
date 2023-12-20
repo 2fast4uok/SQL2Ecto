@@ -18,7 +18,7 @@ The `order by` command is used to alphabetically order records. `desc` helps in 
  select * from employees order by last_name asc;
 ```
 
-Here, we are ordering [`employees`](01.%20Introduction)  by `last_name` in ascending order.
+Here, we are ordering <a href="/blog/Introduction">`employees`</a> by `last_name` in ascending order.
 
 **Result:**
 
@@ -336,4 +336,4 @@ HR.Repo.all(from c in HR.Employee, order_by: [asc: :last_name])
 HR.Repo.all(from c in HR.Employee, order_by: [desc: :last_name])
 ```
 
-In both queries, `c` is the reference variable referring to `HR.Employee`. To know about reference variable refer [[02. Aliases in Ecto]]
+In both queries, `c` is the reference variable referring to `HR.Employee`. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.

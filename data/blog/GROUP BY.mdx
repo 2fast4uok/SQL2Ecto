@@ -12,7 +12,7 @@ The `GROUP BY` command is used to group rows with the same value in a particular
 
 **For Example:**
 
-if you want to know how many records have the same value in the `salary` column from the table [`employees`](01.%20Introduction), you can group those records using the following query:
+if you want to know how many records have the same value in the `salary` column from the table <a href="/blog/Introduction">`employees`</a>, you can group those records using the following query:
 
 ``` SQL
 select salary, count(salary) from employees group by salary;
@@ -52,7 +52,7 @@ After changing `job_id` to `salary` from being selected, it works.
 In Ecto, the `group_by/3` function is used to group fields with the same value. `group_by/3` accepts three arguments:
 
 1. A schema
-2. Reference variable for the schema. Refer [[02. Aliases in Ecto]] to understand aliases/reference variables 
+2. Reference variable for the schema. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables 
 3. A field used to grouping
 
 ##### Expressions

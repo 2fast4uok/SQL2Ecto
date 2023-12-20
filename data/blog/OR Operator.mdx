@@ -12,7 +12,7 @@ The `or` command is used to check either one of the conditions in `where`. In th
 
 **For Example:**
 
-Now let's apply this `or` condition for the [`employees`](01.%20Introduction) table.
+Now let's apply this `or` condition for the <a href="/blog/Introduction">`employees`</a> table.
 
 ``` SQL
 select * from employees where phone_number is null or first_name ILIKE 'A%';
@@ -52,7 +52,7 @@ In this example,  we are checking for two conditions.
 - `is_nil(c.phone_number)` 
 - `ilike(c.email, "bruce.ernst@sqltutorial.org")`
 
-The `c` in both conditions is a reference variable referring to the struct `HR.Employee`.  To know about the reference variable refer to [reference variable](02.%20Aliases%20in%20Ecto). 
+The `c` in both conditions is a reference variable referring to the struct `HR.Employee`.  To know about the reference variable refer to <a href="/blog/Aliases in Ecto">reference variable</a>. 
 
 **Result:**
 
