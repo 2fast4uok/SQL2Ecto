@@ -10,8 +10,6 @@ level: Intermediate
 
 The `union` command is used to do multiple queries at once. By using `union`,  Both queries will return a single table.
 
-##### `union`
-
 **For Example:**
 
 Let's use the `countries` table and `regions` table for this example. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
@@ -35,7 +33,7 @@ In `union`,
 
 **Result:**
 
-!<img src="/static/images/Pastedimage20231108115708.png" width="800" />
+<img src="/static/images/Pastedimage20231108115708.png" width="800" />
 
 Here, you can see that `region_id` from both table has been returned  without duplicates.
 
@@ -62,7 +60,7 @@ select region_id from regions union all select region_id from countries;
 
 In Ecto `union/2` allows you to combine multiple queries. `union/2` expects two arguments. So let's create two queries and combine them using the `union/2` function. 
 
-##### Expression
+**Expression**
 
 **For example:**
 
@@ -110,7 +108,7 @@ region_id_from_region = from c in HR.Region, select: %{"region_id" => c.region_i
 HR.Repo.all(region_id_from_region)
 ```
 
-##### `union_all`
+### `union_all`
 
 As we mentioned, the result is returned in a map `%{}`. To include duplicate values, use [union_all/2](https://hexdocs.pm/ecto/Ecto.Query.html#union_all/2) function.
 

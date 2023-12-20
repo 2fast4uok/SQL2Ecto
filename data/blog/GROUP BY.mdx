@@ -45,9 +45,9 @@ select salary, count(job_id) from employees group by salary;
 
 After changing `job_id` to `salary` from being selected, it works.
 
-# Ecto query for `GROUP BY`
+# Ecto query for `group by`
 
-#### [group_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#group_by/3)
+### [group_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#group_by/3)
 
 In Ecto, the `group_by/3` function is used to group fields with the same value. `group_by/3` accepts three arguments:
 
@@ -55,7 +55,7 @@ In Ecto, the `group_by/3` function is used to group fields with the same value. 
 2. Reference variable for the schema. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables 
 3. A field used to grouping
 
-##### Expressions
+**Expressions**
 
 **For Example:**
 

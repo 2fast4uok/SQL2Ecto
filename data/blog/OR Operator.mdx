@@ -33,9 +33,9 @@ The first 3 records satisfy the ` first_name ILIKE 'A%'` condition while the nex
 
 # Ecto query for  `or`
 
-#### [or/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#or/2)
+### [or/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#or/2)
 
-##### Expression
+**Expression**
 
 In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) you can fetch records that satisfy either one of the conditions by using the [or/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#or/2) function.
 
@@ -124,33 +124,10 @@ IEx(15)> HR.Employee |> where([c], is_nil(c.phone_number) or ilike(c.email, "bru
     manager_id: 100,
     job_id: 16,
     department_id: 8
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 178,
-    first_name: "Kimberely",
-    last_name: "Grant",
-    email: "kimberely.grant@sqltutorial.org",
-    phone_number: nil,
-    hire_date: ~D[1999-05-24],
-    salary: Decimal.new("7000.00"),
-    manager_id: 100,
-    job_id: 16,
-    department_id: 8
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 179,
-    first_name: "Charles",
-    last_name: "Johnson",
-    email: "charles.johnson@sqltutorial.org",
-    phone_number: nil,
-    hire_date: ~D[2000-01-04],
-    salary: Decimal.new("6200.00"),
-    manager_id: 100,
-    job_id: 16,
-    department_id: 8
   }
+
+  <!-- and so on -->
+
 ]
 IEx(16)> 
 ```

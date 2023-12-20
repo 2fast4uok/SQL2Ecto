@@ -39,9 +39,9 @@ select * from employees where first_name ilike 'a%';
 
 # Ecto query for `like`
 
-#### [like/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#like/2)
+### [like/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#like/2)
 
-##### Expression
+**Expression**
 
 In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) you can do it with the `like/2` function from `Ecto.Query`.
 
@@ -55,7 +55,7 @@ HR.Employee
 
 On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers.  Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know  about aliases/reference variables.
 
-`ilike/2`
+### `ilike/2`
 
 ``` Elixir
 HR.Employee 
