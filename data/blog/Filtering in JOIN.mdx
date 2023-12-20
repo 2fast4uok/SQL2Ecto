@@ -56,9 +56,9 @@ Here, you can see that every row from `countries` is returned, but only rows fro
 
 # Ecto query to filter in `join`
 
-##### [where/3](https://hexdocs.pm/ecto/Ecto.Query.html#where/3)
+### [where/3](https://hexdocs.pm/ecto/Ecto.Query.html#where/3)
 
-##### Expression
+**Expression**
 
 
 ``` Elixir
@@ -149,9 +149,9 @@ iex(2)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
 
 Here, you can see that all lists with `region_id` 2 are returned.
 
-##### [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2)
+### [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2)
 
-Example:
+**Example:**
 
 ``` Elixir
 HR.Country

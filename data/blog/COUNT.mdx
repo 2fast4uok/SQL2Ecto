@@ -38,13 +38,13 @@ select count(phone_number) from employees;
 
 You can see that when we counted the entire table using `*` the result was 31, but when I counted only `phone_number` rows, the result was 25.  It's because some records have a null value in the `phone_number` column. 
 
-# Ecto query for `COUNT`
+# Ecto query for `count`
 
-#### [count/0](https://hexdocs.pm/ecto/Ecto.Query.API.html#count/0)
+### [count/0](https://hexdocs.pm/ecto/Ecto.Query.API.html#count/0)
 
 The `count/0` function is used to get the total number of inserted records in a schema. 
 
-##### Expressions
+**Expressions**
 
 **For Example:**
 
@@ -73,7 +73,7 @@ HR.Repo.all(from c in HR.Employee, select: count())
 
 The `count/1` function is used to calculate the total number of non-null values for a particular field in a schema
 
-##### Expressions
+**Expressions**
 
 **Example:**
 

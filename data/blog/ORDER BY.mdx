@@ -10,8 +10,7 @@ level: Basic
 
 The `order by` command is used to alphabetically order records. `desc` helps in descending order and `asc` helps in ascending order. The default ordering is `asc`.
 
-#### `asc`
-
+### `asc`
 **Example:**
 
 ``` SQL
@@ -26,8 +25,7 @@ Here, we are ordering <a href="/blog/Introduction">`employees`</a> by `last_name
 
 In the above example, you can see that `last_name` is ordered in ascending order, starting from A.
 
-#### `desc`
-
+### `desc`
 **Example:**
 
 ``` SQL
@@ -43,15 +41,15 @@ select * from employees order by last_name desc;
 
 # Ecto query for `order by`
 
-#### [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3)
+### [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3)
 
-##### Expression
+**Expression**
 
 The [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3) function is used to alphabetically order records.
 
-Example:
+**Example:**
 
-#### `asc`
+### `asc`
 
 
 ``` Elixir
@@ -130,91 +128,16 @@ IEx(18)> HR.Employee |> order_by(asc: :last_name) |> HR.Repo.all()
     manager_id: 108,
     job_id: 6,
     department_id: 10
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 119,
-    first_name: "Karen",
-    last_name: "Colmenares",
-    email: "karen.colmenares@sqltutorial.org",
-    phone_number: "515.127.4566",
-    hire_date: ~D[1999-08-10],
-    salary: Decimal.new("2500.00"),
-    manager_id: 114,
-    job_id: 13,
-    department_id: 3
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 102,
-    first_name: "Lex",
-    last_name: "De Haan",
-    email: "lex.de haan@sqltutorial.org",
-    phone_number: "515.123.4569",
-    hire_date: ~D[1993-01-13],
-    salary: Decimal.new("17000.00"),
-    manager_id: 100,
-    job_id: 5,
-    department_id: 9
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 104,
-    first_name: "Bruce",
-    last_name: "Ernst",
-    email: "bruce.ernst@sqltutorial.org",
-    phone_number: "590.423.4568",
-    hire_date: ~D[1991-05-21],
-    salary: Decimal.new("6000.00"),
-    manager_id: 103,
-    job_id: 9,
-    department_id: 6
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 193,
-    first_name: "Britney",
-    last_name: "Everett",
-    email: "britney.everett@sqltutorial.org",
-    phone_number: "650.501.2876",
-    hire_date: ~D[1997-03-03],
-    salary: Decimal.new("3900.00"),
-    manager_id: 123,
-    job_id: 17,
-    department_id: 5
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 109,
-    first_name: "Daniel",
-    last_name: "Faviet",
-    email: "daniel.faviet@sqltutorial.org",
-    phone_number: "515.124.4169",
-    hire_date: ~D[1994-08-16],
-    salary: Decimal.new("9000.00"),
-    manager_id: 108,
-    job_id: 6,
-    department_id: 10
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 202,
-    first_name: "Pat",
-    last_name: "Fay",
-    email: "pat.fay@sqltutorial.org",
-    phone_number: "603.123.6666",
-    hire_date: ~D[1997-08-17],
-    salary: Decimal.new("6000.00"),
-    manager_id: 201,
-    job_id: 11,
-    department_id: 2
   }
+
+<!-- and so on -->
+
 ]
 ```
 
 you can see that `last_name` is starts from `Austin`.
 
-##### `desc`
+### `desc`
 
 ``` Elixir
 HR.Employee 
@@ -292,45 +215,23 @@ IEx(20)> HR.Employee |> order_by(desc: :last_name) |> HR.Repo.all()
     manager_id: 114,
     job_id: 13,
     department_id: 3
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 176,
-    first_name: "Jonathon",
-    last_name: "Taylor",
-    email: "jonathon.taylor@sqltutorial.org",
-    phone_number: nil,
-    hire_date: ~D[1998-03-24],
-    salary: Decimal.new("8600.00"),
-    manager_id: 100,
-    job_id: 16,
-    department_id: 8
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 111,
-    first_name: "Ismael",
-    last_name: "Sciarra",
-    email: "ismael.sciarra@sqltutorial.org",
-    phone_number: "515.124.4369",
-    hire_date: ~D[1997-09-30],
-    salary: Decimal.new("7700.00"),
-    manager_id: 108,
-    job_id: 6,
-    department_id: 10
-  },
+  }
+
+<!-- and so on -->
+
+]
 ```
 
 You can see that `last_name` starts from `Whalen`.
 #### Keywords
 
-#### `asc`
+### `asc`
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, order_by: [asc: :last_name])
 ```
 
-#### `desc`
+### `desc`
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, order_by: [desc: :last_name])

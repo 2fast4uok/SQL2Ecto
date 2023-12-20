@@ -36,13 +36,13 @@ The `regions` table has 7 rows, and the `countries` table has 25 rows. The last 
 
 
 # Ecto query for `left join`
-#### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
+### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
 The `join/5` function is used to perform a `left join` in Ecto. For more information about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. Now let's explore the `:left` option in join.
 
 ###### `:left` option in join
 
-##### Expression
+**Expression**
 
 **For Example:**
 
@@ -53,7 +53,7 @@ HR.Region
 |> HR.Repo.all() 
 ```
 
-Explanation:
+**Explanation:**
 
 The above query will return all records from the `HR.Region` on the left side of the `ON` condition and only match records from `HR.Country` on the right side of the `ON` condition.
 

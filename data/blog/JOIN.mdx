@@ -17,7 +17,6 @@ The `join/inner join` command is used to join multiple tables based on a particu
 
 `inner join` is the default `join`. so `join` and `inner join` are the same.  Let's how `inner join`
 works.
-#### `inner join`
 
 We are using the `employees` table and `jobs` table for this example.
 
@@ -25,7 +24,7 @@ We are using the `employees` table and `jobs` table for this example.
 
 <img src="/static/images/Pastedimage20231107104248.png" width="1500" />
 
-##### `jobs` table
+#### `jobs` table
 
 <img src="/static/images/Pastedimage20231107104406.png" width="700"/>
 
@@ -67,7 +66,7 @@ In the above example, we are selecting only `first_name` from `employees`, `last
 
 # Ecto query for `join` 
 
-#### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
+### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
 The `join/5` function is used to perform all types of joins: inner, outer, right, and left. This function accepts 4 arguments:
 
@@ -78,9 +77,8 @@ The `join/5` function is used to perform all types of joins: inner, outer, right
 5. `on` to refers to the column name that matches both the table
 
 Now let's see `:inner` join.
-##### `:inner`
 
-Example:
+**Example:**
 
 We are using the `countries` and `regions`table for this query. Refer <a href="/blog/Introduction">Introduction</a> to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
 
@@ -92,7 +90,7 @@ PSQL example `regions` table
 
 Now let's perform an `inner join` for these two tables in `Ecto`.
 
-##### Expressions
+**Expressions**
 
 
 **For Example:**

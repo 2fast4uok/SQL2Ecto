@@ -26,9 +26,9 @@ In the above example, you can see that for all 6 rows, there is no value inserte
 
 # Ecto query for `is null`
 
-#### [is_nil/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#is_nil/1)
+### [is_nil/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#is_nil/1)
 
-##### Expression
+**Expression**
 
 In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html), you can achieve this using the [is_nil/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#is_nil/1) function.
 
@@ -111,20 +111,10 @@ IEx(11)> HR.Employee |> where([c], is_nil(c.phone_number)) |> HR.Repo.all()
     manager_id: 100,
     job_id: 16,
     department_id: 8
-  },
-  %HR.Employee{
-    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
-    employee_id: 179,
-    first_name: "Charles",
-    last_name: "Johnson",
-    email: "charles.johnson@sqltutorial.org",
-    phone_number: nil,
-    hire_date: ~D[2000-01-04],
-    salary: Decimal.new("6200.00"),
-    manager_id: 100,
-    job_id: 16,
-    department_id: 8
   }
+
+<!-- and so on -->
+
 ]
 IEx(12)> 
 ```
