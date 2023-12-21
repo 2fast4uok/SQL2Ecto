@@ -159,11 +159,25 @@ IEx(21)> HR.Repo.all(HR.Employee)
     manager_id: 103,
     job_id: 9,
     department_id: 6
+  },
+  %HR.Employee{
+    __meta__: #Ecto.Schema.Metadata<:loaded, "employees">,
+    employee_id: 105,
+    first_name: "David",
+    last_name: "Austin",
+    email: "david.austin@sqltutorial.org",
+    phone_number: "590.423.4569",
+    hire_date: ~D[1997-06-25],
+    salary: Decimal.new("4800.00"),
+    manager_id: 103,
+    job_id: 9,
+    department_id: 6
   }
 
 <!-- and so on -->
 
 ]
+
 ```
 
 ### 2.[select/3](https://hexdocs.pm/ecto/Ecto.Repo.html#c:all/2)

@@ -189,42 +189,7 @@ iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
       region_id: 3
     },
     nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "BE",
-      country_name: "Belgium",
-      region_id: 1
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "BR",
-      country_name: "Brazil",
-      region_id: 2
-    },
-    %HR.Region{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "regions">,
-      region_id: 2,
-      region_name: "Americas"
-    }
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "CA",
-      country_name: "Canada",
-      region_id: 2
-    },
-    %HR.Region{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "regions">,
-      region_id: 2,
-      region_name: "Americas"
-    }
-  ],
+  ]
   [
     %HR.Country{
       __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
@@ -270,70 +235,7 @@ iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
     },
     nil
   ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "FR",
-      country_name: "France",
-      region_id: 1
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "HK",
-      country_name: "HongKong",
-      region_id: 3
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "IL",
-      country_name: "Israel",
-      region_id: 4
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "IN",
-      country_name: "India",
-      region_id: 3
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "IT",
-      country_name: "Italy",
-      region_id: 1
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "JP",
-      country_name: "Japan",
-      region_id: 3
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "KW",
-      country_name: "Kuwait",
-      region_id: 4
-    },
-    nil
-  ],
-  [
+    [
     %HR.Country{
       __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
       country_id: "MX",
@@ -349,72 +251,13 @@ iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
   [
     %HR.Country{
       __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "NG",
-      country_name: "Nigeria",
-      region_id: 4
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "NL",
-      country_name: "Netherlands",
-      region_id: 1
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
       country_id: "SG",
       country_name: "Singapore",
       region_id: 3
     },
     nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "UK",
-      country_name: "United Kingdom",
-      region_id: 1
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "US",
-      country_name: "United States of America",
-      region_id: 2
-    },
-    %HR.Region{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "regions">,
-      region_id: 2,
-      region_name: "Americas"
-    }
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "ZM",
-      country_name: "Zambia",
-      region_id: 4
-    },
-    nil
-  ],
-  [
-    %HR.Country{
-      __meta__: #Ecto.Schema.Metadata<:loaded, "countries">,
-      country_id: "ZW",
-      country_name: "Zimbabwe",
-      region_id: 4
-    },
-    nil
   ]
 ]
-
 ```
 
 Here, you can see that those with `region_id` 2 are from `HR.Region`, and others are `nil` (not included).
