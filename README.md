@@ -28,11 +28,13 @@ yarn
 First, run the development server:
 
 ```bash
-yarn dev / npm start
+yarn dev / npm start / npm run dev
 ```
 
 
 Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+If ya'll are curious about the difference between Yarn and NPM have a look at this: [Yarn vs. NPM](https://www.knowledgehut.com/blog/web-development/yarn-vs-npm).
 
 ## FYI for Customization
 
