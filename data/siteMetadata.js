@@ -1,18 +1,18 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'SQL2Ecto',
-  author: 'Shardul Hemant',
+  author: 'Shardul',
   headerTitle: 'SQL2Ecto',
   description:
     'Learn to answer questions with data using SQL and Ecto. No coding experience necessary.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://SQL2Ecto.org',
+  siteRepo: 'https://github.com/2fast4uok/SQL2Ecto',
   siteLogo: '/static/images/logos.png',
-  socialBanner: '/static/images/sql2ectobanner.png',
+  socialBanner: '/public/static/images/sql2ectobanner.png',
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
+  email: 'talamsupport@auroville.org.in',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
