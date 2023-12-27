@@ -8,13 +8,13 @@ layout: PostSimple
 level: Basic
 ---
 
-The `limit` command is used to limit the number of records from being fetched. 
+The `limit` command is used to limit the number of records from being fetched.
 
 **For Example:**
 
-As explained in the <a href="/blog/Introduction">Introduction</a> part, the `employees` table has a total of 31 records.  Now let's set a limit to it.
+As explained in the <a href="/blog/Introduction">Introduction</a> part, the `employees` table has a total of 31 records. Now let's set a limit to it.
 
-``` SQL
+```SQL
  select * from employees limit 10;
 ```
 
@@ -24,26 +24,26 @@ As explained in the <a href="/blog/Introduction">Introduction</a> part, the `emp
 
 we are limiting the records to 10.
 
-# Ecto query for  `limit`
+# Ecto query for `limit`
 
-### [limit/2](https://hexdocs.pm/ecto/Ecto.Query.html#limit/3) 
+### [limit/2](https://hexdocs.pm/ecto/Ecto.Query.html#limit/3)
 
 **Expression**
 
 You can limit the records using the `limit/2` function from [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html).
 
-**For Example:** 
+**For Example:**
 
-``` Elixir
-HR.Employee 
-|> limit(2) 
-|> HR.Repo.all() 
+```Elixir
+HR.Employee
+|> limit(2)
+|> HR.Repo.all()
 ```
 
 **Result:**
 
 ```Elixir
-IEx(24)> HR.Employee |> limit(2) |> HR.Repo.all() 
+IEx(24)> HR.Employee |> limit(2) |> HR.Repo.all()
 
 [
   %HR.Employee{
@@ -75,13 +75,12 @@ IEx(24)> HR.Employee |> limit(2) |> HR.Repo.all()
 ]
 ```
 
-
 #### Keywords
 
 Limit the records to 2 using the Keywords format
 
-``` Elixir
-HR.Repo.all(from c in HR.Employee, limit: 2) 
+```Elixir
+HR.Repo.all(from c in HR.Employee, limit: 2)
 ```
 
 `limit` is a key and its value is 2. Here c is the <a href="/blog/Aliases in Ecto">reference variable</a>. We are limiting the records to 2 using the `Keywords` format.

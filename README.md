@@ -19,6 +19,7 @@ She also wanted to help the Elixir community by including Ecto into the mix.
 ```bash
 sudo npm install --global yarn
 ```
+
 ```bash
 yarn
 ```
@@ -30,7 +31,6 @@ First, run the development server:
 ```bash
 yarn dev / npm start / npm run dev
 ```
-
 
 Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

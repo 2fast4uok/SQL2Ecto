@@ -8,7 +8,7 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `left join` command returns all rows from the left table and only the matching rows from the right. 
+The `left join` command returns all rows from the left table and only the matching rows from the right.
 
 **For Example:**
 
@@ -16,17 +16,15 @@ Let's use the `countries` table and `regions` table for this example. Refer <a h
 
 <img src="/static/images/Pastedimage20231107155511.png" width="600" />
 
-
 <img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
 We have the `countries` and `regions` table. Let's perform a `left join` on them.
 
-``` SQL
+```SQL
 select * from countries left join regions on countries.region_id = regions.region_id;
 ```
 
 The `left join` will return all rows from the `countries` table and only the rows from the `regions` table where the `region_id` column matches between the two tables.
-
 
 **Result:**
 
@@ -34,8 +32,8 @@ The `left join` will return all rows from the `countries` table and only the row
 
 The `regions` table has 7 rows, and the `countries` table has 25 rows. The last 3 records in the `regions` table didn't match with any rows in the `countries` table. Since `LEFT JOIN` returns only matching values from the right-side table, these unmatched values in the `regions` table didn't appear in the result in the above example.
 
-
 # Ecto query for `left join`
+
 ### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
 The `join/5` function is used to perform a `left join` in Ecto. For more information about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. Now let's explore the `:left` option in join.
@@ -46,11 +44,11 @@ The `join/5` function is used to perform a `left join` in Ecto. For more informa
 
 **For Example:**
 
-``` Elixir
-HR.Region 
-|> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id) 
-|> select([r, c], [r,c]) 
-|> HR.Repo.all() 
+```Elixir
+HR.Region
+|> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id)
+|> select([r, c], [r,c])
+|> HR.Repo.all()
 ```
 
 **Explanation:**
@@ -59,15 +57,15 @@ The above query will return all records from the `HR.Region` on the left side of
 
 `|> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id) `
 
-- It is accepts `HR.Region` schema as the first argument. 
+- It is accepts `HR.Region` schema as the first argument.
 - `[r]` is the reference variable for the `HR.Region` schema. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and it's reference variable.
 - `on: r.region_id == c.region_id` condition.
 
 **Result:**
 
-``` Elixir
-iex(6)> HR.Region |> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r,c]) |> HR.Repo.all() 
+```Elixir
+iex(6)> HR.Region |> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r,c]) |> HR.Repo.all()
 
 [
   [
@@ -121,7 +119,7 @@ iex(6)> HR.Region |> join(:left, [r], c in HR.Country, on: r.region_id == c.regi
       country_name: "Brazil",
       region_id: 2
     }
-  ], 
+  ],
   [
     %HR.Region{
       __meta__: #Ecto.Schema.Metadata<:loaded, "regions">,
@@ -157,5 +155,3 @@ In the above result, you can see that all records in `HR.Region` are returned, e
 ```Elixir
 HR.Repo.all(from r in HR.Region, left_join: c in HR.Country, on: r.region_id == c.region_id, select: [r, c])
 ```
-
- 

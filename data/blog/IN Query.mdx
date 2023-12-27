@@ -8,11 +8,11 @@ layout: PostSimple
 level: Basic
 ---
 
-The `in` command is employed to retrieve records by checking for multiple values in the `where` clause. In the `where` clause, **Comparison operators** such as =, >= allow you to compare with only one value, but the  `in` command enables checking for multiple values.
+The `in` command is employed to retrieve records by checking for multiple values in the `where` clause. In the `where` clause, **Comparison operators** such as =, >= allow you to compare with only one value, but the `in` command enables checking for multiple values.
 
 **For Example:**
 
-``` SQL
+```SQL
 select * from employees where job_id in (9, 5, 6);
 ```
 
@@ -34,15 +34,14 @@ In the above table, you can observe that all records have a `job_id` of either 9
 
 **Example:**
 
-``` Elixir
-HR.Employee 
-|> where([c], c.job_id in [1, 2, 3]) 
+```Elixir
+HR.Employee
+|> where([c], c.job_id in [1, 2, 3])
 |> HR.Repo.all()
 ```
 
-The above code will fetch `HR.Employee` records whose `job_id` is 1, 2, or 3. 
-`where([c], c.job_id in [1, 2, 3])` -> Here `[c]` is the <a href="/blog/Aliases in Ecto">reference variable</a> that is used to refer to `HR.Employee`.  To learn more about the reference variable, refer to <a href="/blog/Aliases in Ecto">reference variable</a>.
-
+The above code will fetch `HR.Employee` records whose `job_id` is 1, 2, or 3.
+`where([c], c.job_id in [1, 2, 3])` -> Here `[c]` is the <a href="/blog/Aliases in Ecto">reference variable</a> that is used to refer to `HR.Employee`. To learn more about the reference variable, refer to <a href="/blog/Aliases in Ecto">reference variable</a>.
 
 **Result:**
 
@@ -96,8 +95,8 @@ In the above example, both records contain a `job_id` of either 1, 2, or 3.
 
 #### Keywords
 
-``` Elixir
-HR.Repo.all(from c in HR.Employee, where: c.job_id in [1,2,3])  
+```Elixir
+HR.Repo.all(from c in HR.Employee, where: c.job_id in [1,2,3])
 ```
 
-`where` is a key.  `c.job_id in [1,2,3]` is a value specifying that only records with a `job_id` of either 1, 2, or 3 should be returned.
+`where` is a key. `c.job_id in [1,2,3]` is a value specifying that only records with a `job_id` of either 1, 2, or 3 should be returned.

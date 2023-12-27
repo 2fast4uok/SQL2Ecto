@@ -8,7 +8,7 @@ summary: In this tutorial, you will learn about SQL queries and their equivalent
 layout: PostSimple
 ---
 
-In this tutorial, you will learn about SQL queries and their equivalent Ecto queries. Both are used to interact with the database. 
+In this tutorial, you will learn about SQL queries and their equivalent Ecto queries. Both are used to interact with the database.
 
 ### SQL
 
@@ -16,9 +16,9 @@ SQL stands for Structured Query Language. It is a language to interact with the 
 
 #### **Database**
 
-I took this database from [sql-sample-database](https://www.sqltutorial.org/sql-sample-database/) 
+I took this database from [sql-sample-database](https://www.sqltutorial.org/sql-sample-database/)
 
-I've named my database as `sql_ecto_repo`. It has 7 tables. 
+I've named my database as `sql_ecto_repo`. It has 7 tables.
 
 This database manages the HR data of a small business.
 
@@ -34,30 +34,28 @@ The diagram below illustrates the tables in the `sql_ecto_repo` database.
 
 <img src="/static/images/Screenshotfrom2023-10-3115-05-55.png" />
 
-
 **Number of records in each table:**
 
-- employees      -     31
-- dependents    -     30
-- departments   -     11
-- jobs                 -     11
-- locations         -      7
-- countries         -      25
-- regions            -      4 
-
+- employees - 31
+- dependents - 30
+- departments - 11
+- jobs - 11
+- locations - 7
+- countries - 25
+- regions - 4
 
 ### [Ecto](https://hexdocs.pm/ecto/Ecto.html)
 
-Ecto is an elixir library which is a wrapper around the database in elixir. Ecto allows us to interact with the database. Ecto has 4 main components. 
+Ecto is an elixir library which is a wrapper around the database in elixir. Ecto allows us to interact with the database. Ecto has 4 main components.
 
- 1. [Ecto.Schema](https://hexdocs.pm/ecto/Ecto.Schema.html)
- 2. [Ecto.Repo](https://hexdocs.pm/ecto/Ecto.Repo.html)
- 3. [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)
- 4. [Ecto.Changeset](https://hexdocs.pm/ecto/Ecto.Query.html)
+1.  [Ecto.Schema](https://hexdocs.pm/ecto/Ecto.Schema.html)
+2.  [Ecto.Repo](https://hexdocs.pm/ecto/Ecto.Repo.html)
+3.  [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html)
+4.  [Ecto.Changeset](https://hexdocs.pm/ecto/Ecto.Query.html)
 
-`Ecto.Schema` is used to tell the database about the structure of our table such as what columns/fields should be there, their datatypes, relations, and everything.  `Ecto.Repo` is used to create, delete, update, to do queries in the databases. `Ecto.Query` is used to do queries from the `Ecto.Repo`.  `Ecto.Changeset` is used to set constraints for the columns, or you can set how you want the value to be inserted, You can cast the columns. 
+`Ecto.Schema` is used to tell the database about the structure of our table such as what columns/fields should be there, their datatypes, relations, and everything. `Ecto.Repo` is used to create, delete, update, to do queries in the databases. `Ecto.Query` is used to do queries from the `Ecto.Repo`. `Ecto.Changeset` is used to set constraints for the columns, or you can set how you want the value to be inserted, You can cast the columns.
 
-###  [Schema](https://hexdocs.pm/ecto/Ecto.Schema.html)
+### [Schema](https://hexdocs.pm/ecto/Ecto.Schema.html)
 
 Our `Ecto.Repo` is named as `Hr.Repo`. Feel free to explore the GitHub repository below to see the schema structure that is being used in this tutorial.  
 https://github.com/sangeethailango/SQL-Ecto-learning/tree/main/lib/sql_ecto/hr

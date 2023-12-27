@@ -11,9 +11,10 @@ level: Basic
 The `order by` command is used to alphabetically order records. `desc` helps in descending order and `asc` helps in ascending order. The default ordering is `asc`.
 
 ### `asc`
+
 **Example:**
 
-``` SQL
+```SQL
  select * from employees order by last_name asc;
 ```
 
@@ -26,9 +27,10 @@ Here, we are ordering <a href="/blog/Introduction">`employees`</a> by `last_name
 In the above example, you can see that `last_name` is ordered in ascending order, starting from A.
 
 ### `desc`
+
 **Example:**
 
-``` SQL
+```SQL
 select * from employees order by last_name desc;
 ```
 
@@ -37,7 +39,6 @@ select * from employees order by last_name desc;
 <img src="/static/images/Screenshotfrom2023-11-0411-58-04.png" width="1500" />
 
 `last_name` is in descending order, starting from W.
-
 
 # Ecto query for `order by`
 
@@ -51,10 +52,9 @@ The [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3) function is
 
 ### `asc`
 
-
-``` Elixir
-HR.Employee 
-|> order_by(asc: :last_name) 
+```Elixir
+HR.Employee
+|> order_by(asc: :last_name)
 |> HR.Repo.all()
 ```
 
@@ -168,15 +168,15 @@ you can see that `last_name` is starts from `Austin`.
 
 ### `desc`
 
-``` Elixir
-HR.Employee 
-|> order_by(desc: :last_name) 
+```Elixir
+HR.Employee
+|> order_by(desc: :last_name)
 |> HR.Repo.all()
 ```
 
 **Result:**
 
-``` Elixir
+```Elixir
 IEx(20)> HR.Employee |> order_by(desc: :last_name) |> HR.Repo.all()
 
 [
@@ -252,6 +252,7 @@ IEx(20)> HR.Employee |> order_by(desc: :last_name) |> HR.Repo.all()
 ```
 
 You can see that `last_name` starts from `Whalen`.
+
 #### Keywords
 
 ### `asc`

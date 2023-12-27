@@ -69,7 +69,7 @@ module.exports = {
               '&:hover': {
                 color: `${theme('colors.blue.400')}`,
               },
-              code: {color: theme ('colors.blue.300') },
+              code: { color: theme('colors.blue.300') },
             },
             code: {
               color: theme('colors.indigo.400'),

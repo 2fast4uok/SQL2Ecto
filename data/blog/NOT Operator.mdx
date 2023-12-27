@@ -8,11 +8,11 @@ layout: PostSimple
 level: Basic
 ---
 
-The `not` command is used to exclude some values from the records. 
+The `not` command is used to exclude some values from the records.
 
 **Example:**
 
-``` SQL
+```SQL
 select * from employees where job_id = 5 and not salary < 9000;
 ```
 
@@ -26,16 +26,15 @@ You can see in the above example that we have only 2 `employees` with `job_id` 5
 
 Using not and < is no use.
 
-``` SQL
+```SQL
 select * from employees where not salary > 9000 ;
 ```
 
 instead of writing it as above, you could write it as,
 
-``` SQL
+```SQL
 select * from employees where salary < 9000 ;
 ```
-
 
 # Ecto query for `not`
 
@@ -47,18 +46,17 @@ In Ecto, [not/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#not/1) is used to e
 
 Example:
 
-``` Elixir
-HR.Employee 
-|> where([c], c.job_id == 5 and not(c.salary<9000)) 
+```Elixir
+HR.Employee
+|> where([c], c.job_id == 5 and not(c.salary<9000))
 |> HR.Repo.all()
 ```
-
 
 `where([c], c.job_id == 5 and not(c.salary<9000))`-> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. To know about reference variable, refer to <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>. We are writing a condition saying `job_id` should be 5, and the salary is not less than 9000.
 
 **Result:**
 
-``` Elixir
+```Elixir
 IEx(16)> HR.Employee |> where([c], c.job_id == 5 and not(c.salary<9000) ) |> HR.Repo.all()
 
 [
@@ -96,4 +94,3 @@ IEx(16)> HR.Employee |> where([c], c.job_id == 5 and not(c.salary<9000) ) |> HR.
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: c.job_id == 5 and not(c.salary < 9000))
 ```
-

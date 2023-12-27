@@ -16,42 +16,41 @@ In `SQL` and `Ecto`, comparison operators are the same. only equal to will vary.
 
 **In `SQL`**
 
-`=`           Equal to
+`=` Equal to
 
-`!=`          Not equal to
+`!=` Not equal to
 
-\<           Less than
+\< Less than
 
-\>           Greater than
+\> Greater than
 
-\>=         Greater than or equal to
+\>= Greater than or equal to
 
-`<=`         Less than or equal to 
+`<=` Less than or equal to
 
 **In `Ecto`**
 
-`==`           Equal to
+`==` Equal to
 
-`!=`          Not equal to
+`!=` Not equal to
 
-\<           Less than
+\< Less than
 
-\>           Greater than
+\> Greater than
 
-\>=         Greater than or equal to
+\>= Greater than or equal to
 
-`<=`         Less than or equal to 
-
+`<=` Less than or equal to
 
 ### SQL
 
-**Example 1:** 
+**Example 1:**
 
 Let's select those records from <a href="/blog/Introduction">`employees`</a> whose salary is **less than** 6000 using the less than (&lt;) operator.
 
 <img src="/static/images/Screenshotfrom2023-11-0311-45-03.png" width="1500" />
 
-``` SQL
+```SQL
 select * from employees where salary < 6000;
 ```
 
@@ -61,7 +60,7 @@ select * from employees where salary < 6000;
 
 **Example 2:**
 
-``` SQL
+```SQL
 select * from locations where country_id = 'US';
 ```
 
@@ -69,19 +68,18 @@ As we saw in the `where` query, We are selecting locations whose `country_id` is
 
 ### Ecto
 
-``` Elixir
-HR.Employee 
-|> where([c], c.salary < 6000) 
+```Elixir
+HR.Employee
+|> where([c], c.salary < 6000)
 |> HR.Repo.all()
 ```
 
 We are fetching `HR.Employee` whose salary is **less than** 6000 using less than (&lt;) operator.
 
 ```Elixir
-HR.Location 
-|> where([c], c.country_id == "US") 
+HR.Location
+|> where([c], c.country_id == "US")
 |> HR.Repo.all()
 ```
 
 will fetch `HR.Location` whose `country_id` is equal to `US` using == operators.
-

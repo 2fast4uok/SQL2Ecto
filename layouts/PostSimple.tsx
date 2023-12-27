@@ -18,7 +18,7 @@ interface LayoutProps {
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
   const { path, slug, date, title } = content
-  const isIntroduction = title === 'Introduction';
+  const isIntroduction = title === 'Introduction'
 
   return (
     <SectionContainer>
@@ -34,15 +34,22 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
           </header>
           <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0">
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pb-8 pt-10 dark:prose-invert text-lg font-medium tracking-wide leading-9">{children}</div>
+              <div className="prose max-w-none pb-8 pt-10 text-lg font-medium leading-9 tracking-wide dark:prose-invert">
+                {children}
+              </div>
             </div>
           </div>
 
-          <div className="text-center dark:text-white text-xl font-semibold pt-16 border-t border-gray-200 dark:border-gray-700 hover:text-neutral-600 dark:hover:text-neutral-300"><Link href="/">Back to Homepage
-          </Link></div>
+          <div className="border-t border-gray-200 pt-16 text-center text-xl font-semibold hover:text-neutral-600 dark:border-gray-700 dark:text-white dark:hover:text-neutral-300">
+            <Link href="/">Back to Homepage</Link>
+          </div>
 
           {/* I have switched the postitions of the prev/next paths as the navigation order has to be as it is on Main.tsx */}
-          <footer className={`flex flex-col text-sm font-medium sm:flex-row sm:text-xl ${isIntroduction ? 'justify-end' : 'sm:justify-between'}`}>
+          <footer
+            className={`flex flex-col text-sm font-medium sm:flex-row sm:text-xl ${
+              isIntroduction ? 'justify-end' : 'sm:justify-between'
+            }`}
+          >
             {next && next.path && (
               <div className="pt-4 xl:pt-8">
                 <Link

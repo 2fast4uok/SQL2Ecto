@@ -5,9 +5,9 @@ import SocialIcon from '@/components/social-icons'
 export default function Footer() {
   return (
     <footer>
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <p className="mt-8 text-center items-center text-base text-gray-400">
-          Made with{" "}
+      <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+        <p className="mt-8 items-center text-center text-base text-gray-400">
+          Made with{' '}
           <span className="text-red-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export default function Footer() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-          </span>{" "}
+          </span>{' '}
           by tālam.
         </p>
       </div>

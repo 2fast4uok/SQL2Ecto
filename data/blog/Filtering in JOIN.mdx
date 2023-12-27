@@ -8,13 +8,13 @@ layout: PostSimple
 level: Intermediate
 ---
 
-You can use `where`, `and` in a `join` to filter your table. If you want your table to return certain rows that have specific values in either of the table or both tables, you can use `where`, and `and`. 
+You can use `where`, `and` in a `join` to filter your table. If you want your table to return certain rows that have specific values in either of the table or both tables, you can use `where`, and `and`.
 
 ### `where`
 
 **For Example:**
 
-We are using the <a href="/blog/Introduction">`countries`</a> table and <a href="/blog/Introduction">`regions`</a> for this example. 
+We are using the <a href="/blog/Introduction">`countries`</a> table and <a href="/blog/Introduction">`regions`</a> for this example.
 
 <img src="/static/images/Pastedimage20231109095918.png" width="600" />
 
@@ -24,10 +24,9 @@ We are using the <a href="/blog/Introduction">`countries`</a> table and <a href=
 
 Let's join these two tables, but only include rows whose `region_id` is 2.
 
-``` SQL
+```SQL
 select * from countries left join regions on countries.region_id = regions.region_id where countries.region_id = 2;
 ```
-
 
 **Result:**
 
@@ -41,7 +40,7 @@ In `AND`, the table will return first, and then the condition in `AND` will be a
 
 **For Example:**
 
-``` SQL
+```SQL
 select * from countries left join regions on countries.region_id = regions.region_id and countries.region_id = 2;
 ```
 
@@ -53,19 +52,17 @@ Here, you can see that every row from `countries` is returned, but only rows fro
 
 <img src="/static/images/Pastedimage20231109102812.png" width="1500" />
 
-
 # Ecto query to filter in `join`
 
 ### [where/3](https://hexdocs.pm/ecto/Ecto.Query.html#where/3)
 
 **Expression**
 
-
-``` Elixir
+```Elixir
 HR.Country
-|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id ) 
-|> where([p], p.region_id==2 ) 
-|> select([p, r], [p ,r]) 
+|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id )
+|> where([p], p.region_id==2 )
+|> select([p, r], [p ,r])
 |> HR.Repo.all()
 ```
 
@@ -153,11 +150,11 @@ Here, you can see that all lists with `region_id` 2 are returned.
 
 **Example:**
 
-``` Elixir
+```Elixir
 HR.Country
-|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id and p.region_id==2 ) 
-|> select([p, r], [p ,r] ) 
-|>  HR.Repo.all()  
+|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id and p.region_id==2 )
+|> select([p, r], [p ,r] )
+|>  HR.Repo.all()
 ```
 
 The above query will return every record from `HR.Country`, but only those that satisfy the `AND` condition.
@@ -165,7 +162,7 @@ The above query will return every record from `HR.Country`, but only those that 
 **Result:**
 
 ```Elixir
-iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id and p.region_id==2 ) |> select([p, r], [p ,r] ) |>  HR.Repo.all()  
+iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_id and p.region_id==2 ) |> select([p, r], [p ,r] ) |>  HR.Repo.all()
 
 [
   [

@@ -12,9 +12,9 @@ The `like` operator is used to match string values in `where`. You can fetch rec
 
 **For Example:**
 
- Let's write a query to fetch <a href="/blog/Introduction">`employees`</a> records whose `first_name` starts with the letter A followed by any other character or numbers.
+Let's write a query to fetch <a href="/blog/Introduction">`employees`</a> records whose `first_name` starts with the letter A followed by any other character or numbers.
 
-``` SQL
+```SQL
 select * from employees where first_name like 'A%';
 ```
 
@@ -28,14 +28,13 @@ select * from employees where first_name like 'A%';
 
 <img src="/static/images/Screenshotfrom2023-11-0314-42-44.png" width="1500" />
 
-``` SQL
+```SQL
 select * from employees where first_name ilike 'a%';
 ```
 
 **Result:**
 
 <img src="/static/images/Screenshotfrom2023-11-0314-44-12.png" width="1500" />
-
 
 # Ecto query for `like`
 
@@ -47,23 +46,23 @@ In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) you can do it with the 
 
 **For Example:**
 
-``` Elixir
-HR.Employee 
-|> where([c], like(c.first_name, "A%")) 
+```Elixir
+HR.Employee
+|> where([c], like(c.first_name, "A%"))
 |> HR.Repo.all()
 ```
 
-On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers.  Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know  about aliases/reference variables.
+On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers. Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables.
 
 ### `ilike/2`
 
-``` Elixir
-HR.Employee 
-|> where([c], ilike(c.first_name, "a%")) 
+```Elixir
+HR.Employee
+|> where([c], ilike(c.first_name, "a%"))
 |> HR.Repo.all()
 ```
 
-The above code will search for employees whose `first_name` starts with a and A. 
+The above code will search for employees whose `first_name` starts with a and A.
 
 ```Elixir
 IEx(27)> HR.Employee |> where([c], ilike(c.first_name, "a%")) |> HR.Repo.all()
@@ -111,11 +110,10 @@ IEx(27)> HR.Employee |> where([c], ilike(c.first_name, "a%")) |> HR.Repo.all()
 ]
 ```
 
-
 #### Keywords
 
 ```Elixir
-HR.Repo.all(from c in HR.Employee, where: like(c.first_name, "A%"))  
+HR.Repo.all(from c in HR.Employee, where: like(c.first_name, "A%"))
 ```
 
-`where` is a key where it is accepting a function as a value called `like/2`.  
+`where` is a key where it is accepting a function as a value called `like/2`.

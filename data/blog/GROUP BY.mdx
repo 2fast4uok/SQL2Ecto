@@ -14,7 +14,7 @@ The `GROUP BY` command is used to group rows with the same value in a particular
 
 if you want to know how many records have the same value in the `salary` column from the table <a href="/blog/Introduction">`employees`</a>, you can group those records using the following query:
 
-``` SQL
+```SQL
 select salary, count(salary) from employees group by salary;
 ```
 
@@ -33,13 +33,13 @@ It's important to print the columns that you are trying to group by. If you atte
 
 <img src="/static/images/Pastedimage20231106170049.png" width="1500" />
 
-In the above example, an error occurs because I am grouping by `salary` by counting the `job_id` column. This means it will group by `salary` and count how many `job_id` are grouped. However, an error is triggered because I am trying to print the `job_id`, which is a count. You can apply the aggregate function to any column, but for printing, the column that you put after `group by` and the column being printed has to be the same.  You can use `count` for any column. it will simply count the occurrences of that column so that you can have a count of how many columns are grouped.
+In the above example, an error occurs because I am grouping by `salary` by counting the `job_id` column. This means it will group by `salary` and count how many `job_id` are grouped. However, an error is triggered because I am trying to print the `job_id`, which is a count. You can apply the aggregate function to any column, but for printing, the column that you put after `group by` and the column being printed has to be the same. You can use `count` for any column. it will simply count the occurrences of that column so that you can have a count of how many columns are grouped.
 
 <img src="/static/images/Pastedimage20231116154859.png" width="800" />
 
 In the above example, after changing the query to:
 
-``` SQL
+```SQL
 select salary, count(job_id) from employees group by salary;
 ```
 
@@ -52,17 +52,17 @@ After changing `job_id` to `salary` from being selected, it works.
 In Ecto, the `group_by/3` function is used to group fields with the same value. `group_by/3` accepts three arguments:
 
 1. A schema
-2. Reference variable for the schema. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables 
+2. Reference variable for the schema. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables
 3. A field used to grouping
 
 **Expressions**
 
 **For Example:**
 
-``` Elixir
-HR.Employee 
-|> group_by([e], e.salary) 
-|> select([e], %{"salary" => e.salary, "count" => count(e.job_id)}) 
+```Elixir
+HR.Employee
+|> group_by([e], e.salary)
+|> select([e], %{"salary" => e.salary, "count" => count(e.job_id)})
 |> HR.Repo.all()
 ```
 
@@ -83,25 +83,7 @@ So, `salary` is grouped, and the count of how many `job_id` of employees share t
 #### Keywords
 
 ```Elixir
-HR.Repo.all(from e in HR.Employee, group_by: e.salary, select: %{"salary" => e.salary, "count" => count(e.job_id)}) 
+HR.Repo.all(from e in HR.Employee, group_by: e.salary, select: %{"salary" => e.salary, "count" => count(e.job_id)})
 ```
 
-`select:` is a key. `e` is a value that is a reference variable for `HR.Employee`.                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`select:` is a key. `e` is a value that is a reference variable for `HR.Employee`.

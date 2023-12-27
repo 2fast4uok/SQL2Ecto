@@ -8,19 +8,19 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `COUNT` command is used to count the total number of non-null values for a particular  column. You can also count the entire table.
+The `COUNT` command is used to count the total number of non-null values for a particular column. You can also count the entire table.
 
 **For Example:**
 
 <img src="/static/images/Pastedimage20231116133453.png" width="1500" />
 
-The above is the <a href="/blog/Introduction">`employees`</a>  table. The following syntax is used to get the total number of rows in this table.
+The above is the <a href="/blog/Introduction">`employees`</a> table. The following syntax is used to get the total number of rows in this table.
 
-``` SQL
+```SQL
 select count(*) from employees;
 ```
 
-\*  refers to the entire table.
+\* refers to the entire table.
 
 **Result:**
 
@@ -28,7 +28,7 @@ select count(*) from employees;
 
 Now, let's count the non-null `phone_number` rows.
 
-``` SQL
+```SQL
 select count(phone_number) from employees;
 ```
 
@@ -36,21 +36,21 @@ select count(phone_number) from employees;
 
 <img src="/static/images/Pastedimage20231116133548.png" width="600" />
 
-You can see that when we counted the entire table using `*` the result was 31, but when I counted only `phone_number` rows, the result was 25.  It's because some records have a null value in the `phone_number` column. 
+You can see that when we counted the entire table using `*` the result was 31, but when I counted only `phone_number` rows, the result was 25. It's because some records have a null value in the `phone_number` column.
 
 # Ecto query for `count`
 
 ### [count/0](https://hexdocs.pm/ecto/Ecto.Query.API.html#count/0)
 
-The `count/0` function is used to get the total number of inserted records in a schema. 
+The `count/0` function is used to get the total number of inserted records in a schema.
 
 **Expressions**
 
 **For Example:**
 
-``` Elixir
-HR.Employee 
-|> select([c], count()) 
+```Elixir
+HR.Employee
+|> select([c], count())
 |> HR.Repo.all()
 ```
 
@@ -64,11 +64,12 @@ The total number of records for `HR.Employees` is 31 as you can see in the above
 
 #### Keywords
 
-``` Elixir
-HR.Repo.all(from c in HR.Employee, select: count())  
+```Elixir
+HR.Repo.all(from c in HR.Employee, select: count())
 ```
 
-`select:` is a key. `c` is a value that is a reference variable for the `HR.Employee` schema. We are counting all the records from `HR.Employee`.x 
+`select:` is a key. `c` is a value that is a reference variable for the `HR.Employee` schema. We are counting all the records from `HR.Employee`.x
+
 #### [count/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#count/1)
 
 The `count/1` function is used to calculate the total number of non-null values for a particular field in a schema
@@ -77,13 +78,13 @@ The `count/1` function is used to calculate the total number of non-null values 
 
 **Example:**
 
-``` Elixir
-HR.Employee 
-|> select([c], count(c.phone_number)) 
+```Elixir
+HR.Employee
+|> select([c], count(c.phone_number))
 |> HR.Repo.all()
 ```
 
-`count(c.phone_number)` ->  We are calculating the count of `phone_number` for `HR.Employee`.`c` is the reference variable referring to the `HR.Employee`. 
+`count(c.phone_number)` -> We are calculating the count of `phone_number` for `HR.Employee`.`c` is the reference variable referring to the `HR.Employee`.
 
 **Result:**
 
@@ -93,8 +94,8 @@ The total number of records that `phone_number` has a non-null value is 19.
 
 #### Keywords
 
-``` Elixir
+```Elixir
 HR.Repo.all(from c in HR.Employee, select: count(c.phone_number))
 ```
 
-`select:` is a key. `c` is a value that is a reference variable for `HR.Employee`. 
+`select:` is a key. `c` is a value that is a reference variable for `HR.Employee`.

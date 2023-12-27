@@ -3,7 +3,8 @@ const siteMetadata = {
   title: 'SQL2Ecto',
   author: 'Shardul Hemant',
   headerTitle: 'SQL2Ecto',
-  description: 'Learn to answer questions with data using SQL and Ecto. No coding experience necessary.',
+  description:
+    'Learn to answer questions with data using SQL and Ecto. No coding experience necessary.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',

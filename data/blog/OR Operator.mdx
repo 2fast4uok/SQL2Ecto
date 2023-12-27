@@ -14,11 +14,11 @@ The `or` command is used to check either one of the conditions in `where`. In th
 
 Now let's apply this `or` condition for the <a href="/blog/Introduction">`employees`</a> table.
 
-``` SQL
+```SQL
 select * from employees where phone_number is null or first_name ILIKE 'A%';
 ```
 
-Here we have two conditions. 
+Here we have two conditions.
 
 - `phone_number is null`
 - `first_name ILIKE 'A%'`
@@ -31,7 +31,7 @@ The above code will return those records that satisfy either one of the above co
 
 The first 3 records satisfy the ` first_name ILIKE 'A%'` condition while the next 6 rows satisfy the `phone_number is null` condition. Each record satisfies either of the conditions.
 
-# Ecto query for  `or`
+# Ecto query for `or`
 
 ### [or/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#or/2)
 
@@ -41,22 +41,22 @@ In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) you can fetch records t
 
 Example:
 
-``` Elixir
-HR.Employee 
-|> where([c], is_nil(c.phone_number) or ilike(c.email,"bruce.ernst@sqltutorial.org")) 
+```Elixir
+HR.Employee
+|> where([c], is_nil(c.phone_number) or ilike(c.email,"bruce.ernst@sqltutorial.org"))
 |> HR.Repo.all()
 ```
 
-In this example,  we are checking for two conditions.
+In this example, we are checking for two conditions.
 
-- `is_nil(c.phone_number)` 
+- `is_nil(c.phone_number)`
 - `ilike(c.email, "bruce.ernst@sqltutorial.org")`
 
-The `c` in both conditions is a reference variable referring to the struct `HR.Employee`.  To know about the reference variable refer to <a href="/blog/Aliases in Ecto">reference variable</a>. 
+The `c` in both conditions is a reference variable referring to the struct `HR.Employee`. To know about the reference variable refer to <a href="/blog/Aliases in Ecto">reference variable</a>.
 
 **Result:**
 
-``` Elixir
+```Elixir
 IEx(15)> HR.Employee |> where([c], is_nil(c.phone_number) or ilike(c.email, "bruce.ernst@sqltutorial.org")) |> HR.Repo.all()
 
 [
@@ -129,16 +129,16 @@ IEx(15)> HR.Employee |> where([c], is_nil(c.phone_number) or ilike(c.email, "bru
   <!-- and so on -->
 
 ]
-IEx(16)> 
+IEx(16)>
 ```
 
-In the example, The first struct's email is  `bruce.ernst@sqltutorial.org`, satisfying the `ilike(c.email, "bruce.ernst@sqltutorial.org"))` condition.
-All other structs have `phone_number` as `nil`,  satisfying the `is_nil(c.phone_number)` condition.
+In the example, The first struct's email is `bruce.ernst@sqltutorial.org`, satisfying the `ilike(c.email, "bruce.ernst@sqltutorial.org"))` condition.
+All other structs have `phone_number` as `nil`, satisfying the `is_nil(c.phone_number)` condition.
 
 #### Keywords
 
-``` Elixir
- HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number) or ilike(c.first_name, "J%")) 
+```Elixir
+ HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number) or ilike(c.first_name, "J%"))
 ```
 
 `where` is a key. `is_nil(c.phone_number) or ilike(c.first_name, "J%")` is a value.

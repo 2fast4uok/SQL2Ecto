@@ -15,32 +15,32 @@ The `join/inner join` command is used to join multiple tables based on a particu
 - `left join`
 - `full outer join`
 
-`inner join` is the default `join`. so `join` and `inner join` are the same.  Let's how `inner join`
+`inner join` is the default `join`. so `join` and `inner join` are the same. Let's how `inner join`
 works.
 
 We are using the `employees` table and `jobs` table for this example.
 
-####  `employees` table
+#### `employees` table
 
 <img src="/static/images/Pastedimage20231107104248.png" width="1500" />
 
 #### `jobs` table
 
-<img src="/static/images/Pastedimage20231107104406.png" width="700"/>
+<img src="/static/images/Pastedimage20231107104406.png" width="700" />
 
-The `employees` and the `jobs` tables have a common column called `job_id`. We can join these two tables and create one big table using this `job_id` column.  
+The `employees` and the `jobs` tables have a common column called `job_id`. We can join these two tables and create one big table using this `job_id` column.
 
 **For Example:**
 
-``` SQL
+```SQL
 select * from employees join jobs on employees.job_id = jobs.job_id;
 ```
 
-`join/inner join`, and `ON` are used together. The above will join `employees` and `jobs` whose value in `job_id` is the same.  
+`join/inner join`, and `ON` are used together. The above will join `employees` and `jobs` whose value in `job_id` is the same.
 
 Query Explanation:
 
-- `join/inner join` is used to specify which tables are going to be joined. Here, we defined `employees` and `jobs` are going to be joined. 
+- `join/inner join` is used to specify which tables are going to be joined. Here, we defined `employees` and `jobs` are going to be joined.
 - `ON` is used to specify which columns in the tables have the same values. It indicates how these tables are related to each other. - Here, `employees` and `jobs` are related by the column `job_id`.
 - So the above line means, joining `employees` and `jobs` tables that are related to each other by the column `job_id`.
 - We are selecting every column from both tables to appear.
@@ -53,7 +53,7 @@ In the above table, you can see that both `employees` and `jobs` are joined toge
 
 Example to select only some columns that need to appear:
 
-``` SQL
+```SQL
 select employees.first_name, employees.last_name, employees.phone_number, jobs.min_salary from employees join jobs on employees.job_id = jobs.job_id;
 ```
 
@@ -63,8 +63,7 @@ In the above example, we are selecting only `first_name` from `employees`, `last
 
 <img src="/static/images/Pastedimage20231116224852.png" width="1500" />
 
-
-# Ecto query for `join` 
+# Ecto query for `join`
 
 ### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
@@ -80,7 +79,7 @@ Now let's see `:inner` join.
 
 **Example:**
 
-We are using the `countries` and `regions`table for this query. Refer <a href="/blog/Introduction">Introduction</a> to know about these tables and the database.  Just to show the whole records in the `HR.Country` in the table. 
+We are using the `countries` and `regions`table for this query. Refer <a href="/blog/Introduction">Introduction</a> to know about these tables and the database. Just to show the whole records in the `HR.Country` in the table.
 
 <img src="/static/images/Pastedimage20231107155511.png" width="700" />
 
@@ -92,21 +91,20 @@ Now let's perform an `inner join` for these two tables in `Ecto`.
 
 **Expressions**
 
-
 **For Example:**
 
 ```Elixir
- HR.Region 
- |> join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id) 
+ HR.Region
+ |> join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id)
  |> select([r, c], [r, c])
- |> HR.Repo.all() 
+ |> HR.Repo.all()
 ```
 
-
-The above query will only return rows whose `region_id` is the same in both  `HR.Region` and `HR.Country`. Here, `r` and `c` are reference variable for `HR.Region` and `HR.Country`. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
+The above query will only return rows whose `region_id` is the same in both `HR.Region` and `HR.Country`. Here, `r` and `c` are reference variable for `HR.Region` and `HR.Country`. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 
 **Explanation:**
-######  `join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id)` 
+
+###### `join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id)`
 
 - `:inner` is a join type
 - `[r]` is a variable is a reference to `HR.Region`
@@ -115,8 +113,8 @@ The above query will only return rows whose `region_id` is the same in both  `HR
 
 **Result:**
 
-``` Elixir 
-iex(3)> HR.Region |> join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r, c])|>  HR.Repo.all() 
+```Elixir
+iex(3)> HR.Region |> join(:inner, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r, c])|>  HR.Repo.all()
 
 [
   [
@@ -200,11 +198,10 @@ iex(3)> HR.Region |> join(:inner, [r], c in HR.Country, on: r.region_id == c.reg
 ]
 ```
 
-In the above IEx shell, you can see that only matching `region_id`  values in both `HR.Region` and `HR.Country` are returned. 
+In the above IEx shell, you can see that only matching `region_id` values in both `HR.Region` and `HR.Country` are returned.
 
 #### Keywords
 
 ```Elixir
-HR.Repo.all(from r in HR.Region, join: c in HR.Country, on: r.region_id == c.region_id, select: [r, c]) 
+HR.Repo.all(from r in HR.Region, join: c in HR.Country, on: r.region_id == c.region_id, select: [r, c])
 ```
-

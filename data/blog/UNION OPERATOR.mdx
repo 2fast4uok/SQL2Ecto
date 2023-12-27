@@ -8,7 +8,7 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `union` command is used to do multiple queries at once. By using `union`,  Both queries will return a single table.
+The `union` command is used to do multiple queries at once. By using `union`, Both queries will return a single table.
 
 **For Example:**
 
@@ -16,11 +16,9 @@ Let's use the `countries` table and `regions` table for this example. Refer <a h
 
 <img src="/static/images/Pastedimage20231108115523.png" width="400" />
 
-
 <img src="/static/images/Pastedimage20231108115607.png" width="600" />
 
-
-``` SQL
+```SQL
 select region_id from regions union select region_id from countries;
 ```
 
@@ -35,7 +33,7 @@ In `union`,
 
 <img src="/static/images/Pastedimage20231108115708.png" width="800" />
 
-Here, you can see that `region_id` from both table has been returned  without duplicates.
+Here, you can see that `region_id` from both table has been returned without duplicates.
 
 To include duplicates, use `union all`.
 
@@ -45,7 +43,7 @@ To include duplicates, use `union all`.
 
 **For Example:**
 
-``` SQL
+```SQL
 select region_id from regions union all select region_id from countries;
 ```
 
@@ -53,42 +51,38 @@ select region_id from regions union all select region_id from countries;
 
 <img src="/static/images/Pastedimage20231108120942.png" width="900" />
 
-
 # Ecto query for `union`
 
-### [union/2](https://hexdocs.pm/ecto/Ecto.Query.html#union/2) 
+### [union/2](https://hexdocs.pm/ecto/Ecto.Query.html#union/2)
 
-In Ecto `union/2` allows you to combine multiple queries. `union/2` expects two arguments. So let's create two queries and combine them using the `union/2` function. 
+In Ecto `union/2` allows you to combine multiple queries. `union/2` expects two arguments. So let's create two queries and combine them using the `union/2` function.
 
 **Expression**
 
 **For example:**
 
-
-``` Elixir
-region_id_from_country = 
-HR.Country 
-|> select([c], %{"region_id" => c.region_id}) 
+```Elixir
+region_id_from_country =
+HR.Country
+|> select([c], %{"region_id" => c.region_id})
 ```
 
 Here, we are selecting `region_id` from `HR.Country` and assigning it to a variable called `region_id_from_country`. Here `c` is the reference variable; refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about reference variables.
 
-
-``` Elixir
-region_id_from_region = 
-HR.Region 
+```Elixir
+region_id_from_region =
+HR.Region
 |> select([r], %{"region_id" => r.region_id})
 ```
 
-Here, we are selecting `region_id` from `HR.Region` and assigning it to a variable called `region_id_from_region`.  We are putting both queries in a map data structure using `%{}`. Let's combine both queries.
+Here, we are selecting `region_id` from `HR.Region` and assigning it to a variable called `region_id_from_region`. We are putting both queries in a map data structure using `%{}`. Let's combine both queries.
 
-
-``` Elixir
-union(region_id_from_country, ^region_id_from_region) 
+```Elixir
+union(region_id_from_country, ^region_id_from_region)
 |> HR.Repo.all()
 ```
 
-Here, we are combining both queries. Union expects its second argument to contain the  `^` symbol to indicate that the argument is already defined.  
+Here, we are combining both queries. Union expects its second argument to contain the `^` symbol to indicate that the argument is already defined.
 
 **Result:**
 
@@ -112,8 +106,8 @@ HR.Repo.all(region_id_from_region)
 
 As we mentioned, the result is returned in a map `%{}`. To include duplicate values, use [union_all/2](https://hexdocs.pm/ecto/Ecto.Query.html#union_all/2) function.
 
-``` Elixir
- union_all(region_id_from_country, ^region_id_from_region) |> HR.Repo.all()  
+```Elixir
+ union_all(region_id_from_country, ^region_id_from_region) |> HR.Repo.all()
 ```
 
 **Result:**

@@ -8,7 +8,7 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `right join` command returns all rows from the right table and only the  matching rows from the left table.
+The `right join` command returns all rows from the right table and only the matching rows from the left table.
 
 **For example:**
 
@@ -20,20 +20,19 @@ Let's use the `countries` table and `regions` table. Refer <a href="/blog/Introd
 
 <img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
-
 We have the `countries` and `regions` table. Let's perform a `right join` on them.
 
-``` SQL
+```SQL
 select * from countries right join regions on countries.region_id = regions.region_id;
 ```
 
-The `right join` will return all rows from the `regions` table and only the rows from the `countries` table where the `region_id` column matches  the two tables.
+The `right join` will return all rows from the `regions` table and only the rows from the `countries` table where the `region_id` column matches the two tables.
 
 **Result:**
 
-<img src="/static/images/Pastedimage20231107160949.png"  width="1100" />
+<img src="/static/images/Pastedimage20231107160949.png" width="1100" />
 
-You can see that all records from the `regions` table are returned here, even though the `region_name` values like  `India`, `China`, and `Korean`  didn't have matching values with the `countries` table.   
+You can see that all records from the `regions` table are returned here, even though the `region_name` values like `India`, `China`, and `Korean` didn't have matching values with the `countries` table.
 
 # Ecto query for `right join`
 
@@ -47,27 +46,26 @@ The `join/5` function is used to perform a `right join` in Ecto. For more inform
 
 **For Example:**
 
-``` Elixir
-HR.Region 
-|> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) 
-|> select([r, c], [r,c]) 
-|> HR.Repo.all() 
+```Elixir
+HR.Region
+|> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id)
+|> select([r, c], [r,c])
+|> HR.Repo.all()
 ```
-
 
 The above query will return all records from `HR.Country` on the right side of the `ON` condition. And only matching records from `HR.Region` on the left side of the `ON` condition.
 
 `|> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) `
 
-- It is accepts the `HR.Region` schema as first argument. 
+- It is accepts the `HR.Region` schema as first argument.
 - `[r]` is the reference variable for `HR.Region` schema. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and reference variable.
 - `on: r.region_id == c.region_id)` condition.
 
 **Result:**
 
-``` Elixir
-iex(8)> HR.Region |> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r,c]) |> HR.Repo.all() 
+```Elixir
+iex(8)> HR.Region |> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) |> select([r, c], [r,c]) |> HR.Repo.all()
 
 [
   [

@@ -8,11 +8,11 @@ layout: PostSimple
 level: Basic
 ---
 
-The `is null` command is used to fetch records with no value or null value.  It is used in the `where` command.
+The `is null` command is used to fetch records with no value or null value. It is used in the `where` command.
 
 Example:
 
-``` SQL
+```SQL
 select * from employees where phone_number is null;
 ```
 
@@ -34,16 +34,16 @@ In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html), you can achieve this u
 
 Example:
 
-``` Elixir
-HR.Employee 
-|> where([c], is_nil(c.phone_number)) 
+```Elixir
+HR.Employee
+|> where([c], is_nil(c.phone_number))
 |> HR.Repo.all()
 ```
 
-The above code searches in the `HR.Employee` struct where `phone_number` is set to nil. 
-`where([c], is_nil(c.phone_number))` -> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables. 
+The above code searches in the `HR.Employee` struct where `phone_number` is set to nil.
+`where([c], is_nil(c.phone_number))` -> Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables.
 
-``` Elixir
+```Elixir
 IEx(11)> HR.Employee |> where([c], is_nil(c.phone_number)) |> HR.Repo.all()
 
 [
@@ -135,8 +135,8 @@ In the above example, all records have `nil` as a value for `phone_number`.
 
 #### Keywords
 
-``` Elixir
-HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number)) 
+```Elixir
+HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number))
 ```
 
 `where` is a key and it accepts a function as a value called `is_nil/1`. It accepts records from `HR.Employee` whose `phone_number` is `nil`.

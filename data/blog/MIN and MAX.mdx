@@ -16,7 +16,7 @@ Let's find out the highest and lowest of the `salary` column from the table <a h
 
 ### `max`
 
-``` SQL
+```SQL
 select max(salary) from employees;
 ```
 
@@ -28,7 +28,7 @@ The highest `salary` is 24000.
 
 To find the highest value in string characters:
 
-``` SQL
+```SQL
 select max(first_name) from employees;
 ```
 
@@ -40,7 +40,7 @@ As observed, `MAX` returns the value with the starting letter closest to Z, whic
 
 ### `min`
 
-``` SQL
+```SQL
 select min(salary) from employees;
 ```
 
@@ -52,7 +52,7 @@ So the lowest `salary` is 2500.
 
 To find the lowest value in string characters:
 
-``` SQL
+```SQL
 select min(first_name) from employees;
 ```
 
@@ -72,18 +72,18 @@ The `max/1` function is used to find the maximum value of a specific field in a 
 
 **For Example:**
 
-``` Elixir
-HR.Employee 
-|> select([c], max(c.salary)) 
-|> HR.Repo.all() 
+```Elixir
+HR.Employee
+|> select([c], max(c.salary))
+|> HR.Repo.all()
 ```
 
-Here, `c` is the reference variable referring to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables. 
+Here, `c` is the reference variable referring to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables.
 
 **Result:**
 
 ```Elixir
-iex(60)> HR.Employee |> select([c], max(c.salary)) |> HR.Repo.all() 
+iex(60)> HR.Employee |> select([c], max(c.salary)) |> HR.Repo.all()
 [Decimal.new("24000.00")]
 ```
 
@@ -92,7 +92,7 @@ The maximum value in the `salary` field is 24000.
 #### Keywords
 
 ```Elixir
-HR.Repo.all(from c in HR.Employee, select: max(c.salary))   
+HR.Repo.all(from c in HR.Employee, select: max(c.salary))
 ```
 
 ### [min/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#min/1)
@@ -104,8 +104,8 @@ The `min/1` function is used to find the lowest value of a specific field in a s
 **For Example:**
 
 ```Elixir
-HR.Employee 
-|> select([c], min(c.salary)) 
+HR.Employee
+|> select([c], min(c.salary))
 |> HR.Repo.all()
 ```
 
@@ -121,7 +121,7 @@ The minimum value in the `salary` field is 2500.
 #### Keywords
 
 ```Elixir
-HR.Repo.all(from c in HR.Employee, select: min(c.salary))   
+HR.Repo.all(from c in HR.Employee, select: min(c.salary))
 ```
 
-`select:` is a key. `c` is a value that is a reference variable for `HR.Employee`. 
+`select:` is a key. `c` is a value that is a reference variable for `HR.Employee`.
