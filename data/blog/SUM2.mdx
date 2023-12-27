@@ -1,0 +1,59 @@
+---
+title: SUM_2
+lesson: 'LESSON 3'
+date: '999-12-15'
+draft: false
+summary: The `SUM` command is used to obtain the sum of a particular column in a table. It provides the total numeric value of the specified column and operates exclusively on numerical values.
+layout: PostSimple
+level: Intermediate
+---
+
+The `SUM` command is used to obtain the sum of a particular column in a table. It provides the total numeric value of the specified column and operates exclusively on numerical values.
+
+**For Example:**
+
+Let's find out the sum of the `salary` column from the <a href="/blog/Introduction">`employees`</a> table.
+
+```SQL
+select sum(salary) from employees;
+```
+
+**Result:**
+
+<img src="/static/images/Pastedimage20231116144548.png" width="600" />
+
+The total sum of the `salary` column is 249300.
+
+# Ecto query for `sum`
+
+### [sum/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#sum/1)
+
+`sum/1` is used to get the sum of fields in a schema.
+
+**Expressions**
+
+**For Example:**
+
+Consider the following example, which calculates the sum of the `salary` field from the `HR.Employee` schema.
+
+```Elixir
+HR.Employee
+|> select([c], sum(c.salary))
+|> HR.Repo.all()
+```
+
+Here, `c` is the reference variable that refers to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables.
+
+**Result:**
+
+<img src="/static/images/Pastedimage20231116144804.png" width="800" />
+
+The sum of the `salary` in `HR.Job` is 249300.
+
+#### Keywords
+
+```Elixir
+HR.Repo.all(from c in HR.Employee, select: sum(c.salary))
+```
+
+`select:` is a key. `c` is a value that is a reference variable for `HR.Employee`.
