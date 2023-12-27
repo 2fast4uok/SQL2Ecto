@@ -47,7 +47,7 @@ export default function Home({ posts }) {
             <Link
               key={slug}
               href={`/blog/${slug}`}
-              className="group h-fit overflow-hidden rounded-xl bg-blue-50 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-blue-800 dark:shadow-inner hover:dark:shadow-lg hover:dark:shadow-blue-600 md:p-8"
+              className="group h-fit overflow-hidden rounded-xl bg-blue-50 dark:bg-blue-100 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-blue-800 dark:hover:bg-blue-800 dark:shadow-inner hover:dark:shadow-lg hover:dark:shadow-blue-600 md:p-8"
             >
               <p className="pb-4 text-[10px] font-medium uppercase text-blue-950 group-hover:text-white md:text-xs">
                 {lesson}
@@ -81,7 +81,7 @@ export default function Home({ posts }) {
             <Link
               key={slug}
               href={`/blog/${slug}`}
-              className="group h-fit overflow-hidden rounded-xl bg-blue-50 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-blue-800 dark:shadow-inner dark:hover:shadow-lg hover:dark:shadow-blue-600 md:p-8"
+              className="group h-fit overflow-hidden rounded-xl bg-blue-50 dark:bg-blue-100 p-4 shadow-md transition-all duration-300 hover:scale-105 hover:bg-blue-800 dark:hover:bg-blue-800 dark:shadow-inner hover:dark:shadow-lg hover:dark:shadow-blue-600 md:p-8"
             >
               <p className="pb-4 text-[10px] font-medium uppercase text-blue-950 group-hover:text-white md:text-xs">
                 {lesson}
