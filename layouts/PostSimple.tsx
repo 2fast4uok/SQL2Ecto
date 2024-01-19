@@ -46,8 +46,8 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
 
           {/* I have switched the postitions of the prev/next paths as the navigation order has to be as it is on Main.tsx */}
           <footer
-            className={`flex flex-col text-sm font-medium sm:flex-row sm:text-xl ${
-              isIntroduction ? 'justify-end' : 'sm:justify-between'
+            className={`flex text-sm font-medium flex-row sm:text-xl ${
+              isIntroduction ? 'justify-end' : 'justify-between'
             }`}
           >
             {next && next.path && (
