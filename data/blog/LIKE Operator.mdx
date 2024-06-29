@@ -10,6 +10,7 @@ level: Basic
 
 The `like` operator is used to match string values in `where`. You can fetch records that contain specific string characters.
 
+
 **For Example:**
 
 Let's write a query to fetch <a href="/blog/Introduction">`employees`</a> records whose `first_name` starts with the letter A followed by any other character or numbers.
@@ -24,9 +25,9 @@ select * from employees where first_name like 'A%';
 
 ### `ilike`
 
-`like` is case-sensitive. `ilike` is case-insensitive. This Means If you put `like A%` it will only give those records whose `first_name` starts with **A** not the small letter **a**, to also get the records started with a, use `ilike`.
 
-<img src="/static/images/Screenshotfrom2023-11-0314-42-44.png" width="1500" />
+`like` is case-sensitive. `ilike` is case-insensitive. This means if you use `like 'A%'` it will only return records whose first_name starts with A, not the small letter a. To also get the records starting with a, use `ilike`.
+
 
 ```SQL
 select * from employees where first_name ilike 'a%';
@@ -52,7 +53,8 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers. Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables.
+On the above code, `like(c.first_name, "A&")` will search for `employees` whose `first_name` starts with A followed by any characters or numbers. Here `[c]` is the reference variable that is used to refer to `HR.Employee`. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to learn about aliases/reference variables.
+
 
 ### `ilike/2`
 
@@ -62,7 +64,7 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-The above code will search for employees whose `first_name` starts with a and A.
+The above code will search for employees whose `first_name` starts with `a` and `A`.
 
 ```Elixir
 IEx(27)> HR.Employee |> where([c], ilike(c.first_name, "a%")) |> HR.Repo.all()
@@ -116,4 +118,5 @@ IEx(27)> HR.Employee |> where([c], ilike(c.first_name, "a%")) |> HR.Repo.all()
 HR.Repo.all(from c in HR.Employee, where: like(c.first_name, "A%"))
 ```
 
-`where` is a key where it is accepting a function as a value called `like/2`.
+where is a keyword accepting a function as a value called `like/2`.
+
