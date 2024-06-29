@@ -8,7 +8,8 @@ layout: PostSimple
 level: Basic
 ---
 
-The `order by` command is used to alphabetically order records. `desc` helps in descending order and `asc` helps in ascending order. The default ordering is `asc`.
+The `order by` command is used to sort records in ascending and descending order. When ordering, asc specifies ascending order (which is the default), and desc specifies descending order.
+
 
 ### `asc`
 
@@ -18,13 +19,12 @@ The `order by` command is used to alphabetically order records. `desc` helps in 
  select * from employees order by last_name asc;
 ```
 
-Here, we are ordering <a href="/blog/Introduction">`employees`</a> by `last_name` in ascending order.
+This query orders <a href="/blog/Introduction">employees</a> by `last_name` in ascending alphabetical order.
 
 **Result:**
 
 <img src="/static/images/Screenshotfrom2023-11-0411-53-29.png" width="1500" />
 
-In the above example, you can see that `last_name` is ordered in ascending order, starting from A.
 
 ### `desc`
 
@@ -34,11 +34,12 @@ In the above example, you can see that `last_name` is ordered in ascending order
 select * from employees order by last_name desc;
 ```
 
-`desc` will be in descending order.
+This query orders `employees` by `last_name` in descending alphabetical order.
+
+**Result:**
 
 <img src="/static/images/Screenshotfrom2023-11-0411-58-04.png" width="1500" />
 
-`last_name` is in descending order, starting from W.
 
 # Ecto query for `order by`
 
@@ -46,7 +47,7 @@ select * from employees order by last_name desc;
 
 **Expression**
 
-The [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3) function is used to alphabetically order records.
+In Ecto, the [order_by/3](https://hexdocs.pm/ecto/Ecto.Query.html#order_by/3) function is used to alphabetically order records.
 
 **Example:**
 
@@ -61,7 +62,6 @@ HR.Employee
 **Result:**
 
 ```Elixir
-First set of structs
 
 IEx(18)> HR.Employee |> order_by(asc: :last_name) |> HR.Repo.all()
 
@@ -267,4 +267,4 @@ HR.Repo.all(from c in HR.Employee, order_by: [asc: :last_name])
 HR.Repo.all(from c in HR.Employee, order_by: [desc: :last_name])
 ```
 
-In both queries, `c` is the reference variable referring to `HR.Employee`. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
+In both examples, `c` is the reference variable representing `HR.Employee`. For more on reference variables, see <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
