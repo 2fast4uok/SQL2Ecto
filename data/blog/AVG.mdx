@@ -8,31 +8,33 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `AVG` is used to find out the average of a column. It is only used on numerical values.
+The `AVG` command calculates the average of numerical values in a column.
+
 
 **For Example:**
+
+To find out the average of `salary` from <a href="/blog/Introduction">`employees`</a>.
+
 
 ```SQL
 select avg(salary) from employees;
 ```
 
-The above code will give the average of `salary` from <a href="/blog/Introduction">`employees`</a>.
-
 **Result:**
 
 <img src="/static/images/Pastedimage20231116153449.png" width="600" />
 
-As you can see in the above example, the average of `salary` is 8041.9354838709677419.
+The average `salary` in the `employees` table is approximately 8041.94.
 
 # Ecto query for `avg`
 
+In Ecto, you use the avg/1 function to achieve similar results.
+
 ### [avg/1](https://hexdocs.pm/ecto/Ecto.Query.API.html#avg/1)
 
-`avg/1` is used to get the average of fields in a schema.
 
-**Expressions**
+**Expression example**
 
-**For Example:**
 
 ```Elixir
 HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
@@ -46,8 +48,6 @@ HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
 iex(64)> HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
 [Decimal.new("8041.9354838709677419")]
 ```
-
-As you can see in the above example, the average of `salary` is 8041.9354838709677419.
 
 **Expressions**
 
