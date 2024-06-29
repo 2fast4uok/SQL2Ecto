@@ -12,35 +12,37 @@ In `SQL` and `Ecto`, comparison operators are used to compare values, allowing y
 
 ### Comparison operators
 
-In `SQL` and `Ecto`, comparison operators are the same. only equal to will vary. In SQL = is used , in `Ecto` == is used
+
+In `SQL` and `Ecto`, comparison operators are the same except for the equality operator. In `SQL`, = is used for equality, while in `Ecto`, == is used.
+
 
 **In `SQL`**
 
-`=` Equal to
+`=` -  Equal to
 
-`!=` Not equal to
+`!=` - Not equal to
 
-\< Less than
+`\<` -  Less than
 
-\> Greater than
+`\>` -  Greater than
 
-\>= Greater than or equal to
+`\>=` -  Greater than or equal to
 
-`<=` Less than or equal to
+`<=` -  Less than or equal to
 
 **In `Ecto`**
 
-`==` Equal to
+`==` -  Equal to
 
-`!=` Not equal to
+`!=` -  Not equal to
 
-\< Less than
+`\<` -  Less than
 
-\> Greater than
+`\>` -  Greater than
 
-\>= Greater than or equal to
+`\>=` -  Greater than or equal to
 
-`<=` Less than or equal to
+`<=` -  Less than or equal to
 
 ### SQL
 
@@ -48,7 +50,6 @@ In `SQL` and `Ecto`, comparison operators are the same. only equal to will vary.
 
 Let's select those records from <a href="/blog/Introduction">`employees`</a> whose salary is **less than** 6000 using the less than (&lt;) operator.
 
-<img src="/static/images/Screenshotfrom2023-11-0311-45-03.png" width="1500" />
 
 ```SQL
 select * from employees where salary < 6000;
@@ -58,15 +59,8 @@ select * from employees where salary < 6000;
 
 <img src="/static/images/Pastedimage20231116104640.png" width="1400" />
 
-**Example 2:**
-
-```SQL
-select * from locations where country_id = 'US';
-```
-
-As we saw in the `where` query, We are selecting locations whose `country_id` is **equal to** 'US', using the equal to (=) operator.
-
 ### Ecto
+
 
 ```Elixir
 HR.Employee
@@ -74,12 +68,20 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-We are fetching `HR.Employee` whose salary is **less than** 6000 using less than (&lt;) operator.
 
-```Elixir
-HR.Location
-|> where([c], c.country_id == "US")
-|> HR.Repo.all()
+**Example 2:**
+
+let's select all locations in our table, whose `country_id` is **equal to** 'US', using the equal to (=) operator.
+
+```SQL
+select * from locations where country_id = 'US';
 ```
 
-will fetch `HR.Location` whose `country_id` is equal to `US` using == operators.
+ ### Ecto
+
+
+```Elixir
+HR.Employee
+|> where([c], c.country_id == US)
+|> HR.Repo.all()
+```
