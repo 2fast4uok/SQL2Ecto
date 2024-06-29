@@ -12,15 +12,12 @@ The `right join` command returns all rows from the right table and only the matc
 
 **For example:**
 
-Let's use the `countries` table and `regions` table. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
+Let's use the `countries` table and `regions` table for this example. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
 
 <img src="/static/images/Pastedimage20231107155511.png" width="600" />
 
-`regions` table
-
 <img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
-We have the `countries` and `regions` table. Let's perform a `right join` on them.
 
 ```SQL
 select * from countries right join regions on countries.region_id = regions.region_id;
@@ -53,14 +50,13 @@ HR.Region
 |> HR.Repo.all()
 ```
 
-The above query will return all records from `HR.Country` on the right side of the `ON` condition. And only matching records from `HR.Region` on the left side of the `ON` condition.
+The above query will return all records from `HR.Country` and only matching records from `HR.Region`.
 
-`|> join(:right, [r], c in HR.Country, on: r.region_id == c.region_id) `
 
-- It is accepts the `HR.Region` schema as first argument.
+- The `HR.Region` schema as first argument.
 - `[r]` is the reference variable for `HR.Region` schema. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and reference variable.
-- `on: r.region_id == c.region_id)` condition.
+- `on: r.region_id == c.region_id` condition.
 
 **Result:**
 
