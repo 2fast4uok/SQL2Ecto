@@ -8,21 +8,21 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `SELF JOIN` command, used to join the same table with it's own table based on the queries.
+The `SELF JOIN` command, used to join the same table with it's own based on the queries.
 
 **For Example:**
 
 Let's use `locations` table for this query. Refer <a href="/blog/Introduction">Introduction</a> to know about this table and the database.
 
 <img src="/static/images/Pastedimage20231108205230.png" width="1500" />
-
-This is the `locations` table. You can see that lot of records have same `country_id` such as `US`, `UK`. So Let's do query to find what are all the `street_address` are from what `country_id`.
+ 
+Let's do query to find what are all the `street_address` are from what `country_id`.
 
 ```SQL
 SELECT A.street_address AS street_address_1, B.street_address AS street_address_2, A.country_id FROM locations A, locations B WHERE A.street_address <> B.street_address AND A.country_id = B.country_id;
 ```
 
-Here, i am fetching `street_address_1`, `street_address_2` from `locations_1`, `locations_2`. In `where` condition, i am saying `street_address` should not match each other and `country_id` should be same. So it will look for `street_address` whose `country_id` are same and will return.
+Here, i am fetching `street_address_1`, `street_address_2` from `locations_1`, `locations_2`. In `where` condition, i am saying `street_address` should not match and `country_id` should match. So it will look for `street_address` whose `country_id` are same and will return.
 
 **Result:**
 
