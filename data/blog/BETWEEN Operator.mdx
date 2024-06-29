@@ -8,7 +8,7 @@ layout: PostSimple
 level: Basic
 ---
 
-The `between` command is used in the `where` to check for a range. It verifies whether the records have values within the specified range and is typically combined with the `and` command.
+The `between` command is used in the `where` to check for a range. It verifies whether the records have values within the specified range and it is typically combined with the `and` command.
 
 **For Example:**
 
@@ -35,3 +35,4 @@ As seen in the displayed records, the `job_id` values are between 5 and 9.
 # Ecto query for `between`
 
 Ecto does not have a specific `between` function. However, you can filter your records within a particular range using the `fragement/1`, as described in the [fragment](https://hexdocs.pm/ecto/Ecto.Query.API.html#fragment/1), or by utilizing comparison operators.
+
