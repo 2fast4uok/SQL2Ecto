@@ -8,7 +8,8 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `HAVING` command is used to perform aggregate functions such as `AVG`,`COUNT`, and `MAX` in a `group_by`. You cannot do aggregate functions in the `WHERE` clause.
+The `HAVING` command is used to perform aggregate functions such as `AVG`,`COUNT`, and `MAX` in a `group_by`. Unlike WHERE, HAVING works specifically with grouped results.
+
 
 **For Example:**
 
@@ -16,23 +17,26 @@ The `HAVING` command is used to perform aggregate functions such as `AVG`,`COUNT
 select salary, count(salary) from employees group by salary having count(salary) = 2;
 ```
 
-Here, we are only returning `salary` and the count of the grouped `salary` if the count is equal to 2. We are specifying which grouped items should be returned in the table <a href="/blog/Introduction">`employees`</a>. The count should be equal to 2.
+Here, we are only returning `salary` and the count of the grouped `salary`only if the count is equal to 2. We are specifying which grouped items should be returned in the table <a href="/blog/Introduction">`employees`</a>. The count should be equal to 2.
 
 **Result:**
 
 <img src="/static/images/Pastedimage20231116170204.png" width="1000" />
 
-In the above example, all the counts of the records are 2. We have a total of 2 `employees` who receive 8200 as salary, 2 `employees` who receive 4800 as salary, 2 `employees` who receive 17000 as salary.
+
+In this example, all the grouped salary counts are 2. Thus, we have 2 `employees` earning 8200, 2 earning 4800, and 2 earning 17000.
+
 
 # Ecto query for `having`
 
+In Ecto, having/3 filters grouped rows based on aggregate conditions.
+
+
 ### [having/3](https://hexdocs.pm/ecto/Ecto.Query.html#having/3)
 
-The `having/3` function allows you to perform aggregate functions in join and to filter the rows that are grouped.
 
-**Expressions**
+**Expression example**
 
-**For example:**
 
 ```Elixir
 HR.Employee
@@ -43,13 +47,13 @@ HR.Employee
 ```
 
 `having([c], count(c.salary)==2)` -> `[c]` is the <a href="/blog/Aliases in Ecto">reference variable</a>. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand aliases/reference variables
-`count(c.salary)==2)` -> Here, the `count` function is used to specify that the count of the `salary` should be 2. We are specifying to return the grouped rows where the count of the `salary` is equal to 2.
+`count(c.salary)==2` -> Here, the `count` function is used to specify that the count of the `salary` should be 2. We are specifying to return the grouped rows where the count of the `salary` is equal to 2.
 
 **Result:**
 
 <img src="/static/images/Pastedimage20231116170926.png" width="1500" />
 
-#### Keywords
+#### Keyword example
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, group_by: c.salary, having: count(c.salary)==2, select: %{"salary" => c.salary, "count" => count(c.job_id)})
