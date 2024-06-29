@@ -103,7 +103,7 @@ IEx(14)> HR.Employee |> where([c], is_nil(c.phone_number) and ilike(c.first_name
 ]
 ```
 
-#### Keywords example
+#### Keyword example
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number) and ilike(c.first_name, "J%"))
