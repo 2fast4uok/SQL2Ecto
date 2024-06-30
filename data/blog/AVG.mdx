@@ -13,7 +13,7 @@ The `AVG` command calculates the average of numerical values in a column.
 
 **For Example:**
 
-To find out the average of `salary` from <a href="/blog/Introduction">`employees`</a>.
+Let's find out the average of `salary` from <a href="/blog/Introduction">`employees`</a>.
 
 
 ```SQL
@@ -49,7 +49,7 @@ iex(64)> HR.Employee |> select([c], avg(c.salary)) |> HR.Repo.all()
 [Decimal.new("8041.9354838709677419")]
 ```
 
-**Expressions**
+**Keyword example**
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, select: avg(c.salary))

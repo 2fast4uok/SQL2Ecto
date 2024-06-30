@@ -19,18 +19,18 @@ Let's apply the `and` condition for the [`employees`](/blog/Introduction) table.
 select * from employees where phone_number is nill and first_name ILIKE 'J%';
 ```
 
-Here we have two conditions.
+Conditions.
 
 - `phone_number is null`
 - `first_name ILIKE 'J%'`
 
-We are using the `and` operator in between the two conditions. So it will look for `employees` whose `phone_number` is nul and `first_name` starts from J or j. The `and` will return only records that satisfy conditions.
+We are using the `and` operator in between the two conditions. So it will look for `employees` whose `phone_number` is nul and `first_name` starts from J or j. The `and` will return only records that satisfy both the conditions.
 
 **Result:**
 
 <img src="/static/images/Pastedimage20231104154938.png" width="1500" />
 
-You can use as many and statements as needed.
+You can use as many `and` statements as needed.
 
 # Ecto query for `and`
 
