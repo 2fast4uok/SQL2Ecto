@@ -18,13 +18,12 @@ Let's use the `countries` table and `regions` table for this example. Refer <a h
 
 <img src="/static/images/Pastedimage20231107155541.png" width="400" />
 
-We have the `countries` and `regions` table. Let's perform a `left join` on them.
 
 ```SQL
 select * from countries left join regions on countries.region_id = regions.region_id;
 ```
 
-The `left join` will return all rows from the `countries` table and only the rows from the `regions` table where the `region_id` column matches between the two tables.
+The `left join` will return all rows from the `countries` table and only matching rows from the `regions` table.
 
 **Result:**
 
@@ -36,11 +35,11 @@ The `regions` table has 7 rows, and the `countries` table has 25 rows. The last 
 
 ### [join/5](https://hexdocs.pm/ecto/Ecto.Query.html#join/5)
 
-The `join/5` function is used to perform a `left join` in Ecto. For more information about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. Now let's explore the `:left` option in join.
+The `join/5` function is used to perform a `left join` in Ecto. For more information about the `join/5` function, visit my <a href="/blog/JOIN">JOIN</a> page. 
 
 ###### `:left` option in join
 
-**Expression**
+**Expression example**
 
 **For Example:**
 
@@ -50,14 +49,11 @@ HR.Region
 |> select([r, c], [r,c])
 |> HR.Repo.all()
 ```
+The above query will return all records from the `HR.Region` and only match records from `HR.Country`.
 
 **Explanation:**
 
-The above query will return all records from the `HR.Region` on the left side of the `ON` condition and only match records from `HR.Country` on the right side of the `ON` condition.
-
-`|> join(:left, [r], c in HR.Country, on: r.region_id == c.region_id) `
-
-- It is accepts `HR.Region` schema as the first argument.
+- `HR.Region` schema as the first argument.
 - `[r]` is the reference variable for the `HR.Region` schema. To know about reference variable refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a>.
 - `c in HR.Country` is another schema and it's reference variable.
 - `on: r.region_id == c.region_id` condition.

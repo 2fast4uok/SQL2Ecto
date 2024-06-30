@@ -8,7 +8,9 @@ layout: PostSimple
 level: Basic
 ---
 
-The `where` command is used to select records based on a condition. It returns only those records that satisfy the conditions specified in the `where` command, effectively filtering the records."
+
+The `WHERE` command is used to select records based on a condition. It returns only those records that satisfy the conditions specified in the `WHERE` command, effectively filtering the records.
+
 
 **For Example:**
 
@@ -26,7 +28,9 @@ Following `where`, `salary` is the column name which has to be equal to the valu
 
 ###### **Note:**
 
-In SQL, anything inside single quotes (' ') is treated as a string. For example, '123' is a string, and 'name' is also a string. Anything inside double quotes (' ') is treated as a column name. If you put any words inside double quotes, SQL will consider them as a column name and search for it."
+In SQL, anything inside single quotes (' ') is treated as a string. For example, '123' is a string, and 'name' is also a string. 
+
+Anything inside double quotes (' ') is treated as a column name. If you put any words inside double quotes, SQL will consider them as a column name and search for it."
 
 <img src="/static/images/Pastedimage20231114102053.png" width="900" />
 
@@ -38,7 +42,7 @@ As you see In the above example, it says **_column "9000" does not exist_**. SQL
 
 **Expression**
 
-In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) `where/3` is used to fetch records based on the particular value.
+In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) `where/3` is used to fetch records based on a particular value.
 
 **For Example:**
 
@@ -83,7 +87,8 @@ IEx(26)> HR.Employee |> where([c], c.salary == 9000) |> HR.Repo.all()
 ]
 ```
 
-`where([c], c.salary == 9000)` -> Here `[c]` is the reference variable which is used to refer to `HR.Employee`. This query will fetch the `HR.Employee` struct which `salary` is equal to 9000. Refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about aliases/reference variables.
+In this example, `where([c], c.salary == 9000)` uses `[c]` as the reference variable to refer to `HR.Employee`. This query will fetch the `HR.Employee` struct where the `salary` is equal to 9000. Refer to [Aliases in Ecto](/blog/Aliases in Ecto) to learn about aliases/reference variables.
+
 
 #### Keywords
 
@@ -91,4 +96,4 @@ IEx(26)> HR.Employee |> where([c], c.salary == 9000) |> HR.Repo.all()
 HR.Repo.all(from c in HR.Employee, where: c.salary == 9000)
 ```
 
-`where` is a key. `c.salary == 9000` is its value which says only `salary` is equal to 9000 should get returned.
+In this example, `where` is a key, and `c.salary == 9000` is its value, which specifies that only records where the salary is equal to 9000 should be returned.

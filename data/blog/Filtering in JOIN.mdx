@@ -8,17 +8,15 @@ layout: PostSimple
 level: Intermediate
 ---
 
-You can use `where`, `and` in a `join` to filter your table. If you want your table to return certain rows that have specific values in either of the table or both tables, you can use `where`, and `and`.
+You can use `where`, `and` in a `join` to filter your table. If you want your table to return rows that have specific values, you can use `where`, and `and`. 
 
 ### `where`
 
-**For Example:**
+**Example:**
 
 We are using the <a href="/blog/Introduction">`countries`</a> table and <a href="/blog/Introduction">`regions`</a> for this example.
 
 <img src="/static/images/Pastedimage20231109095918.png" width="600" />
-
-`regions` table
 
 <img src="/static/images/Pastedimage20231109100017.png" width="400" />
 
@@ -32,7 +30,7 @@ select * from countries left join regions on countries.region_id = regions.regio
 
 <img src="/static/images/Pastedimage20231109102251.png" width="1500" />
 
-The `where` condition applies to the table before the join. The table will return once all the rows satisfy the `where` condition. In the above example, you can see that the two tables whose `region_id` is 2 are returned, and other rows are excluded. If you want the either table to return every row and the other to return only rows that satisfy the condition, use `AND`.
+The `where` condition applies to the table before the join. If you want the either of the table to return every row and the other to return only rows that satisfy the condition, use `AND`.
 
 ### `and`
 
@@ -48,7 +46,7 @@ select * from countries left join regions on countries.region_id = regions.regio
 
 <img src="/static/images/Pastedimage20231109102527.png" width="1500" />
 
-Here, you can see that every row from `countries` is returned, but only rows from `regions` where `region_id` = 2 are included. If you want every row from `regions` but only rows from `countries` that satisfy the condition, you have to use `right join`.
+If you want every row from `regions` but only rows from `countries` that satisfy the condition, you have to use `right join`.
 
 <img src="/static/images/Pastedimage20231109102812.png" width="1500" />
 
@@ -66,7 +64,7 @@ HR.Country
 |> HR.Repo.all()
 ```
 
-- `join(:left, [p], r in HR.Region, on: p.region_id == r.region_id)` -> Left join, joining rows whose `region_id` is the same. Here `p` and `r` are reference variables. Refer to <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand reference variables.
+- `join(:left, [p], r in HR.Region, on: p.region_id == r.region_id)` -> Joining rows whose `region_id` is the same. Here `p` and `r` are reference variables. Refer to <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to understand reference variables.
 - `where([p], p.region_id == 2)` -> Only include rows whose `region_id` is 2. You can also use other comparison operators here, such as !=, &lt;, &gt;.
 
 **Result:**
@@ -143,8 +141,6 @@ iex(2)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
 ]
 
 ```
-
-Here, you can see that all lists with `region_id` 2 are returned.
 
 ### [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2)
 
@@ -256,5 +252,3 @@ iex(3)> HR.Country|> join(:left, [p], r in HR.Region, on: p.region_id==r.region_
   ]
 ]
 ```
-
-Here, you can see that those with `region_id` 2 are from `HR.Region`, and others are `nil` (not included).

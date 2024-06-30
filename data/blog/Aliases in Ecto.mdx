@@ -8,17 +8,27 @@ layout: PostSimple
 level: Basic
 ---
 
-In Ecto, aliases are used to set names for modules. You can reference the module by that name and access everything inside it. Essentially, it is a variable used to refer to a module. Whenever you want to access that module, you can use that variable to access it. You can use these aliases in both modules and Ecto queries.
+In Ecto, aliases are used to set shorter names for modules, allowing you to reference and access everything inside them more easily. Essentially, an alias acts as a variable that refers to a module, simplifying code by reducing the need to type the full module name each time. Aliases can be used in both modules and Ecto queries.
 
-##### **In modules,**
+
+##### **Using Aliases in modules,**
+
+Consider the following example module, `SqlEcto.Hr`, which is created for project functionalities and includes two aliases: `HR.Country` and `HR.Repo`.
+
 
 <img src="/static/images/Pastedimage20231114171110.png" alt="img" width="400" height="300" />
 
-This module, `SqlEcto.Hr`, is created for project functionalities. It includes two aliases: `HR.Country` and `HR.Repo`.
 
-`alias HR.Country` -> Meaning, In the `SqlEcto.HR` module, whenever we want to do some functionalities with `HR.Country`, we can use `Country` instead of `HR.Country`. This `alias` will create an alias for the module with its last word. For `HR.Repo` the alias is `Repo`. This practice helps developers use their time more efficiently, as they can use only the last word instead of typing the entire module name.
+In this module,
 
-##### **In Ecto queries,**
+ - `alias HR.Country` allows us to use Country instead of `HR.Country`.
+ - `alias HR.Repo` allows us to use `Repo` instead of `HR.Repo`.
+
+
+This practice helps developers work more efficiently by using shorter, more convenient names instead of the full module names.
+
+
+##### **Using Aliases in Ecto Queries,**
 
 ```Elixir
 HR.Country
@@ -26,10 +36,13 @@ HR.Country
 |> HR.Repo.all()
 ```
 
-The above query is designed to retrieve all records from `HR.Country`.
-Here, `[c]` serves as the reference variable for `HR.Country`. `[c]` represents `HR.Country`. Whenever you want to refer to `HR.Country` in the whole query, you can use `c`. You can use whatever name you want when you refer to any module.
+In this query:
 
-For instance, you can also
+- `[c]` serves as the reference variable (binding) for HR.Country.
+- `[c]` represents `HR.Country` throughout the query.
+
+You can choose any name for the binding. For instance:
+
 
 ```Elixir
 HR.Country
@@ -37,13 +50,13 @@ HR.Country
 |> HR.Repo.all()
 ```
 
-We are putting the variable inside a list. Otherwise, it will result in an error.
+In this example, `country` is used as the binding instead of `c`. It's important to note that the binding should be placed inside a list; otherwise, it will result in an error. This ensures that the output of the query will be a list.
 
 <img src="/static/images/Pastedimage20231114175306.png" width="1400" height="300" />
 
-The error indicates that the binding (the referenced variable) should be a list. So The output of this query will be a list because we put our alias inside a list.
 
-retrieve specific fields, you can do so by.
+##### **retrieve specific fields,**
+
 
 ```Elixir
 HR.Country
@@ -51,4 +64,7 @@ HR.Country
 |> HR.Repo.all()
 ```
 
-You can access the fields in the module as shown in the above example.
+This query retrieves only the `first_name` and `email` fields from `HR.Country`.
+
+
+Using aliases in both modules and Ecto queries helps streamline your code, making it more readable and easier to manage.

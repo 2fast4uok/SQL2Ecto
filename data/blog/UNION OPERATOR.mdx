@@ -22,18 +22,16 @@ Let's use the `countries` table and `regions` table for this example. Refer <a h
 select region_id from regions union select region_id from countries;
 ```
 
-Here, we are executing two queries and combining them using `union`. This query will return `region_id` from both the tables without duplicate values.
-
-In `union`,
-
-- The column names must be the same in both queries. Using different column names will result in an error.
-- Both columns should have the same data types.
+Here, we are executing two queries and combining them using `union`. This query will return `region_id` from both the tables without duplicate values. 
 
 **Result:**
 
 <img src="/static/images/Pastedimage20231108115708.png" width="800" />
 
-Here, you can see that `region_id` from both table has been returned without duplicates.
+In `union`,
+
+- The column names must be the same in both queries. Using different column names will result in an error.
+- Both columns should have the same data types.
 
 To include duplicates, use `union all`.
 
@@ -57,9 +55,11 @@ select region_id from regions union all select region_id from countries;
 
 In Ecto `union/2` allows you to combine multiple queries. `union/2` expects two arguments. So let's create two queries and combine them using the `union/2` function.
 
-**Expression**
+**Expression example**
 
 **For example:**
+
+First query,
 
 ```Elixir
 region_id_from_country =
@@ -68,6 +68,8 @@ HR.Country
 ```
 
 Here, we are selecting `region_id` from `HR.Country` and assigning it to a variable called `region_id_from_country`. Here `c` is the reference variable; refer <a href="/blog/Aliases in Ecto">Aliases in Ecto</a> to know about reference variables.
+
+second query,
 
 ```Elixir
 region_id_from_region =
@@ -88,11 +90,14 @@ Here, we are combining both queries. Union expects its second argument to contai
 
 <img src="/static/images/Pastedimage20231108142449.png" width="1200" />
 
-#### Keywords
+#### Keyword example
+
+first query,
 
 ```Elixir
 region_id_from_country = from c in HR.Country, select: %{"region_id" => c.region_id}
 ```
+second query,
 
 ```Elixir
 region_id_from_region = from c in HR.Region, select: %{"region_id" => c.region_id}, union: ^region_id_from_country
@@ -114,6 +119,6 @@ As we mentioned, the result is returned in a map `%{}`. To include duplicate val
 
 <img src="/static/images/Pastedimage20231108142659.png" width="1200" />
 
-#### Keywords
+#### Keyword example
 
 Change `union` to `union_all` for the keywords syntax.

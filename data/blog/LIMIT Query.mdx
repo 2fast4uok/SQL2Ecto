@@ -8,11 +8,13 @@ layout: PostSimple
 level: Basic
 ---
 
-The `limit` command is used to limit the number of records from being fetched.
+The `LIMIT` command is used to limit the number of records from being fetched.
+
 
 **For Example:**
 
 As explained in the <a href="/blog/Introduction">Introduction</a> part, the `employees` table has a total of 31 records. Now let's set a limit to it.
+
 
 ```SQL
  select * from employees limit 10;
@@ -22,7 +24,8 @@ As explained in the <a href="/blog/Introduction">Introduction</a> part, the `emp
 
 <img src="/static/images/Pastedimage20231114101217.png" width="1500" />
 
-we are limiting the records to 10.
+In this example, we are limiting the records to 10.
+
 
 # Ecto query for `limit`
 
@@ -83,4 +86,4 @@ Limit the records to 2 using the Keywords format
 HR.Repo.all(from c in HR.Employee, limit: 2)
 ```
 
-`limit` is a key and its value is 2. Here c is the <a href="/blog/Aliases in Ecto">reference variable</a>. We are limiting the records to 2 using the `Keywords` format.
+In this example, `limit` is a key and its value is 2. Here `c` is the [reference variable](/blog/Aliases in Ecto). We are limiting the records to 2 using the Keywords format.

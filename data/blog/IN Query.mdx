@@ -8,7 +8,8 @@ layout: PostSimple
 level: Basic
 ---
 
-The `in` command is employed to retrieve records by checking for multiple values in the `where` clause. In the `where` clause, **Comparison operators** such as =, >= allow you to compare with only one value, but the `in` command enables checking for multiple values.
+The `in` command is employed to retrieve records by checking for multiple values in the `where` clause. While **Comparison operators** such as =, >= allow you to compare with only one value, the `in` command enables checking for multiple values.
+
 
 **For Example:**
 
@@ -99,4 +100,4 @@ In the above example, both records contain a `job_id` of either 1, 2, or 3.
 HR.Repo.all(from c in HR.Employee, where: c.job_id in [1,2,3])
 ```
 
-`where` is a key. `c.job_id in [1,2,3]` is a value specifying that only records with a `job_id` of either 1, 2, or 3 should be returned.
+Here, `where` is a key. `c.job_id in [1,2,3]` is a value specifying that only records with a `job_id` of either 1, 2, or 3 should be returned.

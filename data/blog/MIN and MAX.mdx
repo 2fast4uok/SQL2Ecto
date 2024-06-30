@@ -8,7 +8,7 @@ layout: PostSimple
 level: Intermediate
 ---
 
-The `MAX` and `MIN` are used to get the maximum and minimum values of a column which value can be numerical, character string, or dates. For numerical values, the highest number is returned as the maximum, and the lowest number is returned as the minimum. When dealing with string characters, the closest value starting from 'A' is returned as the minimum, and the closest value starting from 'Z' is returned as the maximum.
+The `MAX` and `MIN` are used to retrieve the maximum and minimum values from a column which value can be numerical, character string, or dates. For numerical values, the highest number is returned as the maximum, and the lowest number is returned as the minimum. When dealing with string characters, the closest value starting from 'A' is returned as the minimum, and the closest value starting from 'Z' is returned as the maximum.
 
 **For Example:**
 
@@ -87,7 +87,7 @@ iex(60)> HR.Employee |> select([c], max(c.salary)) |> HR.Repo.all()
 [Decimal.new("24000.00")]
 ```
 
-The maximum value in the `salary` field is 24000.
+The maximum value of the `salary` field is 24000.
 
 #### Keywords
 

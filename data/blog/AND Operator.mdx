@@ -8,32 +8,35 @@ layout: PostSimple
 level: Basic
 ---
 
-`and` is used to check for multiple conditions in a query. `and` will return records which satisfy all the conditions.
+The `and` operator is used to check for multiple conditions in a query. It will return records that satisfy all the specified conditions.
+
 
 **For Example:**
 
-Now let's apply this `and` condition for the <a href="/blog/Introduction">`employees`</a> table.
+Let's apply the `and` condition for the [`employees`](/blog/Introduction) table.
 
 ```SQL
 select * from employees where phone_number is nill and first_name ILIKE 'J%';
 ```
 
-Here we have two conditions.
+Conditions.
 
 - `phone_number is null`
 - `first_name ILIKE 'J%'`
 
-We are using the `and` operator in between the two conditions. So it will look for `employees` whose `phone_number` is nil and `first_name` starts from J or j. and will return only records which satisfy both sides the condition.
+We are using the `and` operator in between the two conditions. So it will look for `employees` whose `phone_number` is nul and `first_name` starts from J or j. The `and` will return only records that satisfy both the conditions.
+
+**Result:**
 
 <img src="/static/images/Pastedimage20231104154938.png" width="1500" />
 
-You can use as many `and` statements you want.
+You can use as many `and` statements as needed.
 
 # Ecto query for `and`
 
 ### [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2)
 
-**Expression**
+**Expression example**
 
 In [Ecto.Query](https://hexdocs.pm/ecto/Ecto.Query.html) You can check for two condition with the [and/2](https://hexdocs.pm/ecto/Ecto.Query.API.html#and/2) function
 
@@ -45,12 +48,12 @@ HR.Employee
 |> HR.Repo.all()
 ```
 
-Here we have checking for two functions.
+Conditions
 
 - `is_nil(c.phone_number)`
-- `ilike(c.first_name, "J%"))`
+- `ilike(c.first_name, "J%")`
 
-The `c` in both condition is reference variable which is referring to the struct `HR.Employee`. To know about reference variable refer <a href="/blog/Aliases in Ecto">reference variable</a>.
+The above query will return `employees` whose `phone_number` is null and `first_name` starts with J or j. The `c` in both conditions are called reference variable which is referring to the struct `HR.Employee`. To know about reference variable refer <a href="/blog/Aliases in Ecto">reference variable</a>.
 
 **Result:**
 
@@ -100,12 +103,8 @@ IEx(14)> HR.Employee |> where([c], is_nil(c.phone_number) and ilike(c.first_name
 ]
 ```
 
-The above is result whose `phone_number` is nil and `first_name` starts with J or j.
-
-#### Keywords
+#### Keyword example
 
 ```Elixir
 HR.Repo.all(from c in HR.Employee, where: is_nil(c.phone_number) and ilike(c.first_name, "J%"))
 ```
-
-`where` is a key. `is_nil(c.phone_number) and ilike(c.first_name, "J%")` is a value.
