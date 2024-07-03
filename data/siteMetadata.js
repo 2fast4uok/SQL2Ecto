@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Shardul',
   headerTitle: 'SQL2Ecto',
   description:
-    'Learn to answer questions with data using SQL and Ecto. No coding experience necessary.',
+    'Transition seamlessly from SQL to Ecto through guided leasons.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://SQL2Ecto.org',

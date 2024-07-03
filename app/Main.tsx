@@ -18,7 +18,7 @@ export default function Home({ posts }) {
       <div className="mt-28 grid md:grid-cols-2">
         <div className="space-y-8">
           <h1 className="text-5xl font-semibold text-blue-900 dark:text-blue-400 md:text-7xl">
-            Welcome to the SQL to Ecto Tutorial
+            From SQL Expertise to Ecto Mastery
           </h1>
           <h2 className="text-2xl dark:text-white xl:pr-7">{siteMetadata.description}</h2>
           <Link href={IntroductionUrl}>
